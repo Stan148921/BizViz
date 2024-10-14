@@ -161,52 +161,96 @@ nav {
 
 /* Hero Section */
 .hero {
-    position: relative;
-    height: 100vh;
-    background-image: url('assets/images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-image: url('./Assets/Images/background.jpg'); /* Replace with your image path */
+    background-size: cover; /* Use 'cover' to fill the section */
+    background-position: center; /* Center the image */
+    padding: 60px 20px; /* Adjust the padding to fit your design */
+    position: relative; /* Allows overlay to position correctly */
+    min-height: 20px; /* Minimum height to show some of the background */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    text-align: center; /* Center the text */
 }
 
 .overlay {
-    position: absolute;
+    position: absolute; /* Overlay covers the entire hero */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), rgba(0, 0, 0, 0.3); /* Gradient on top of the background */
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 1; /* Place the overlay below the text */
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
+    position: relative; /* Ensure the text is above the overlay */
+    z-index: 2; /* Ensure it is above the overlay */
+    color: white; /* White text color for contrast */
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 36px; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+    font-size: 18px; /* Adjust the font size as needed */
+    margin: 10px 0; /* Space between the text elements */
 }
 
 .btn {
-    padding: 15px 40px;
-    background-color: #ff5e5e;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    background-color: #ffcc00; /* Button color */
+    color: black; /* Button text color */
+    padding: 10px 20px; /* Adjust padding to fit better */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 20px; /* Space above the button */
+    display: inline-block; /* Makes the button fit content */
 }
+
+/* Separator */
+.separator {
+    height: 2px; /* Height of the separator line */
+    background-color: #ffcc00; /* Color of the separator line */
+    margin: 40px 0; /* Space around the separator */
+}
+
+/* Text Block Styles */
+.text-block {
+    display: flex; /* Use flexbox for the content alignment */
+    align-items: center; /* Vertically align items */
+    margin: 20px 0; /* Space between text blocks */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for the text block */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents overflow of images */
+}
+
+/* Left Content */
+.content-left {
+    display: flex; /* Flexbox for alignment */
+    width: 100%; /* Take full width */
+}
+
+/* Right Content */
+.content-right {
+    display: flex; /* Flexbox for alignment */
+    width: 100%; /* Take full width */
+}
+
+/* Text Styles */
+.text {
+    padding: 20px; /* Space inside text block */
+    flex: 1; /* Allow text to grow */
+}
+
+/* Image Styles */
+.image {
+    max-width: 200px; /* Maximum width of the images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 20px; /* Space around the images */
+}
+
 
 .btn:hover {
     background-color: #e14d4d;
