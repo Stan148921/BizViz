@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizViz - Reputation & IT Advisor</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="./Index.html" class="logo">BizViz</a> 
+            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="./Index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <div class="service-image-container" onclick="toggleServiceDetails(this)">
+                    <img src="./Assets/Images/reput.jpg" alt="Reputation Management" class="service-image">
+                    <h3>Reputation Management</h3>
+                    <p>We manage your Google reviews, answer customer questions, and optimize your online presence to attract more customers.</p>
+                </div>
+                <div class="service-details" style="display: none;">
+                    <h4>Our Services Include:</h4>
+                    <ul>
+                        <p><strong>Online Review Management:</strong> Monitoring and responding to reviews across platforms, encouraging positive feedback.</p>
+                        <p><strong>Customer Engagement:</strong> Social listening and engagement campaigns to interact with your audience.</p>
+                        <p><strong>Content Creation:</strong> Crafting compelling brand stories and optimizing SEO for better visibility.</p>
+                        <p><strong>Crisis Management:</strong> Tailored response plans and real-time monitoring.</p>
+                        <p><strong>Monthly Reporting:</strong> Detailed performance metrics and strategy adjustments.</p>
+                    </ul>
+                    <p>Let BizViz help you enhance your online presence and build trust with your customers.</p>
+                    <a href="#contact" class="contact-button">Contact Us Today</a>
+
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-image-container" onclick="toggleServiceDetails(this)">
+                    <img src="./Assets/Images/social.png" alt="Social Media Management" class="service-image">
+                    <h3>Social Media Management</h3>
+                    <p>Let us help you create and manage your business's Facebook account to engage effectively with your audience.</p>
+                </div>
+                <div class="service-details" style="display: none;">
+                    <p>Our social media management services include profile creation, content scheduling, audience engagement, and analytics reporting.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-image-container" onclick="toggleServiceDetails(this)">
+                    <img src="./Assets/images/help.png" alt="IT Advising Services" class="service-image">
+                    <h3>IT Advising Services</h3>
+                    <p>Offering IT support tailored to your business needs, including system maintenance, security solutions, and tech strategy.</p>
+                </div>
+                <div class="service-details" style="display: none;">
+                    <p>Our IT advising services encompass infrastructure assessment, risk management, and technology integration tailored to your business objectives.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-image-container" onclick="toggleServiceDetails(this)">
+                    <img src="./Assets/Images/web.png" alt="Website Updates" class="service-image">
+                    <h3>Website Updates</h3>
+                    <p>We keep your business information up-to-date across all platforms, ensuring your customers have the latest details.</p>
+                </div>
+                <div class="service-details" style="display: none;">
+                    <p>Our website update services include content management, SEO optimization, and performance monitoring to keep your site relevant and effective.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./Scripts/script.js"></script>
+    <script>
+        function toggleServiceDetails(container) {
+            const details = container.nextElementSibling;
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

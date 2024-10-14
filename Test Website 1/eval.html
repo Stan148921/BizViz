@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizViz - Reputation & IT Advisor</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./Index.html" class="logo">BizViz</a>
+            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="./Index.html">Home</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="eval">
+        <div class="eval-grid">
+            <div class="eval-item">
+                <div class="eval-container" onclick="toggleServiceDetails(this)">
+                    <h3>Get Your Free Evaluation Today</h3>                </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </section>
+
+    <section class="calendly-section">
+        <div class="calendly-text">
+            <h2>Common Challenges We Can Address:</h2>
+            <p>In our 30-minute meeting, we will discuss the specific challenges your business is facing and explore how our services can help.</p>
+            <ul>
+                <li><strong>Customer Engagement:</strong> Discuss strategies to enhance engagement on your Facebook page and website.</li>
+                <li><strong>Online Presence Management:</strong> Effective ways to handle Google questions and reviews.</li>
+                <li><strong>Technical Support Needs:</strong> Solutions for technical hurdles your business may encounter.</li>
+                <li><strong>Website Management:</strong> Keep your business information up-to-date across all platforms.</li>
+                <li><strong>Social Media Strategies:</strong> Optimize your presence and engage your audience effectively.</li>
+            </ul>
+            <p><strong>Book a time that works for you, and let’s start addressing your business challenges together!</strong></p>
+        </div>
+
+        <div class="calendly-widget">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/stan14892" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BizViz - Reputation & IT Advisor</p>
+    </footer>
+
+    <script src="./Scripts/script.js"></script>
+</body>
+</html>

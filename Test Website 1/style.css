@@ -1,0 +1,373 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-us {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5)), #f9f9f9;
+    text-align: center;
+}
+
+/* Dashed border */
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: start;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.text-section p {
+    margin-bottom: 20px;
+}
+
+.image-section {
+    flex: 1;
+}
+
+.team-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-image:hover {
+    transform: scale(1.05);
+}
+
+/* For Mobile Screens */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .text-section, .image-section {
+        max-width: 100%;
+    }
+
+    .team-image {
+        margin-top: 20px;
+    }
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: rgb(255, 255, 255);
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none; /* Remove the underline */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #ff5e5e;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none; /* Hide by default */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 40px;
+        background-color: white;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10; /* Ensure it appears above other content */
+    }
+
+    .nav-links.show {
+        display: flex; /* Show when the class is added */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), rgba(0, 0, 0, 0.3); /* Gradient on top of the background */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 40px;
+    background-color: #ff5e5e;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e14d4d;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Button Styling */
+.contact-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff5e5e;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effects */
+.contact-button:hover {
+    background-color: #e14d4d;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Styles for Reputation Management Section */
+.reputation-management {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .service-item {
+        width: 100%;
+    }
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto; /* Adjusted for more spacing */
+    padding: 20px;
+    background-color: #fff; /* White background for form */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-container h1 {
+    text-align: center;
+    color: #333; /* Dark text color for heading */
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Grey color for labels */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-button {
+    display: block;
+    background-color: #ff5e5e; /* Primary button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%; /* Full-width button */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.contact-button:hover {
+    background-color: #e14d4d; /* Darker shade for hover effect */
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff; /* White background for dropdown */
+    appearance: none; /* Remove default arrow */
+}
+
+/* Optional: Style for the dropdown arrow (for a more modern look) */
+select::-ms-expand {
+    display: none; /* Hides the default dropdown arrow in IE */
+}
+
+.contact-container label {
+    font-weight: bold; /* Make labels bold for better visibility */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropbtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #827c7c; /* Match your theme */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white; /* White background for dropdown */
+    min-width: 160px; /* Minimum width for dropdown */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black; /* Black text for dropdown items */
+    padding: 12px 16px; /* Padding for dropdown items */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make dropdown items block elements */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Highlight effect on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
+}
+
+.eval-container,h3{
+    text-align: center;
+}
+
+.calendly-text, h3{
+    text-align: center;
+}
