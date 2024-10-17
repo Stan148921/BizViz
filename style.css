@@ -204,25 +204,69 @@
         background-color: #e6b800; /* Slightly darker on hover */
     }
 
-    /* About Us Section */
-    .about-us {
-        padding: 60px 20px;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5)), #f9f9f9;
-        text-align: center;
+    .why-choose-us {
+        padding: 60px 0;
+        background-color: #f9f9f9;
     }
-
-    hr.solid {
-        border-top: 3px solid #bbb;
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
-
-    .about-us h2 {
+    
+    .why-choose-us h2 {
         font-size: 2.5rem;
         color: #333;
-        margin-bottom: 0px;
-        font-weight: bold;
+        margin-bottom: 30px;
         text-align: center;
     }
-
+    
+    .two-column {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    
+    .column {
+        flex: 1;
+    }
+    
+    .column p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #555;
+    }
+    
+    .benefits-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .benefits-list li {
+        margin-bottom: 15px;
+        padding-left: 30px;
+        position: relative;
+    }
+    
+    .benefits-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #ffcc00;
+        font-weight: bold;
+    }
+    
+    .benefits-list li strong {
+        color: #333;
+    }
+    
+    @media (max-width: 768px) {
+        .two-column {
+            flex-direction: column;
+        }
+    }
+    
     .content-container {
         display: flex;
         justify-content: space-between;
@@ -291,17 +335,18 @@
 
     .card img {
         width: 100%;
-        height: 150px;
+        height: 200px;
         object-fit: center;
     }
 
     .card h3 {
         padding: 15px;
-        text-align: center;
+        text-align: end;
         position: absolute;
+        color: rgba(0, 0, 0, 0.879);
         bottom: 0;
         width: 100;
-        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+        background-color: rgba(255, 255, 255, 0.67); /* Semi-transparent background */
     }
 
     .card-hover {
@@ -326,8 +371,8 @@
     }
 
     .card-hover p {
-        font-size: 0.9em; /* Slightly smaller font size */
-        line-height: 1.4; /* Improved line spacing */
+       font-size: 0.9em; /* Slightly smaller font size */
+    line-height: 1.4; /* Improved line spacing */
     }
 
     /* Text Block Styles */
@@ -360,79 +405,217 @@
         text-align: center;
     }
 
-    /* Button Styling */
-    .contact-button {
-        display: inline-block;
-        padding: 15px 30px;
-        background-color: #ff5e5e;
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border-radius: 50px;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Hover Effects */
-    .contact-button:hover {
-        background-color: #e14d4d;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Additional Styles for Reputation Management Section */
-    .reputation-management {
-        padding: 50px 20px;
-        background-color: #f9f9f9;
-        text-align: center;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 600px) {
-        .service-item {
-            width: 100%;
-        }
-    }
-
     .contact-container {
         max-width: 600px;
-        margin: 40px auto; /* Adjusted for more spacing */
-        padding: 20px;
-        background: white; /* Set background for contact form */
-        border-radius: 8px; /* Rounded corners */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    .contact-container h3 {
-        margin-bottom: 20px; /* Space below heading */
+    
+    .contact-container h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
     }
-
-    .contact-container label {
-        margin-top: 10px; /* Space above labels */
-        display: block; /* Block display for labels */
+    
+    .form-group {
+        margin-bottom: 20px;
     }
-
-    .contact-container input,
-    .contact-container textarea {
-        width: 100%; /* Full width inputs */
-        padding: 10px; /* Space inside inputs */
-        margin-top: 5px; /* Space above inputs */
-        border: 1px solid #ccc; /* Border for inputs */
-        border-radius: 5px; /* Rounded corners */
-        font-size: 1rem; /* Font size for inputs */
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #666;
     }
-
-    .contact-container button {
-        background-color: #ffcc00; /* Button color */
-        color: black; /* Button text color */
-        padding: 10px 20px; /* Adjust padding */
-        border: none; /* Remove border */
-        border-radius: 5px; /* Rounded corners */
-        cursor: pointer; /* Pointer cursor for buttons */
-        font-size: 1rem; /* Font size for button */
-        margin-top: 20px; /* Space above button */
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
     }
+    
+    .form-group select[multiple] {
+        height: 120px;
+    }
+    
+    .form-group textarea {
+        height: 150px;
+        resize: vertical;
+    }
+    
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #ffcc00;
+        color: #333;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+        background-color: #e6b800;
+    }
+/* Services Page Styles */
+.services-intro {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
 
+.service-category {
+    padding: 40px 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.service-content {
+    display: flex;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.service-image {
+    width: 40%;
+    max-width: 200px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-list {
+    width: 35%;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.service-list h4 {
+    margin-bottom: 10px;
+}
+
+.service-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-list li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #ffcc00;
+}
+
+.service-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-details {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.service-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-details li {
+    margin-bottom: 10px;
+}
+
+.why-choose-us {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.why-choose-us ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.why-choose-us li {
+    margin-bottom: 10px;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+    .service-content, .service-list {
+        width: 100%;
+    }
+    
+    .service-list {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.reputation-details, li{
+    padding-left: 30px;
+}
+.learn-more-button {
+    width:40%;
+    margin-top: 20px;
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
     /* Footer */
     footer {
         background-color: #333; /* Dark background for footer */
