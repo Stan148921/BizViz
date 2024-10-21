@@ -45,7 +45,6 @@ body {
 .service-item:hover {
     transform: translateY(-5px);
 }
-
 .service-content {
     display: flex;
     flex-direction: column;
