@@ -72,3 +72,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Animated counters
+function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    let count = 0;
+    const increment = target / 200; // Adjust for speed
+
+    const updateCount = () => {
+        if(count < target) {
+            count += increment;
+            el.innerText = Math.ceil(count);
+            setTimeout(updateCount, 1);
+        } else {
+            el.innerText = target;
+        }
+    };
+
+    updateCount();
+}
+
+// Trigger counter animation when in view
+const counters = document.querySelectorAll('.counter');
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+counters.forEach(counter => {
+    observer.observe(counter);
+});
+
+// Parallax effect
+window.addEventListener('scroll', () => {
+    const parallax = document.querySelector('.services-intro');
+    let scrollPosition = window.pageYOffset;
+    parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+});
