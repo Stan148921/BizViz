@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizzViz - Our Services</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./services.css">
 </head>
 
 <body>
     <header>
         <nav>
             <a href="./Index.html" class="logo">BizzViz</a> 
-            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
+            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#776;</button>
             <ul class="nav-links">
                 <li><a href="./Index.html">Home</a></li>
                 <li><a href="./services.html">Services</a></li>
-                <li><a href="#">Pricing</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -28,176 +29,294 @@
             <p>At BizzViz, we offer comprehensive solutions to enhance your online presence and streamline your IT operations. Our services are designed to help small to medium-sized businesses thrive in the digital landscape.</p>
         </section>
         <section id="online-presence" class="service-category">
-          <!--Begin the reputation Management Card-->
             <h2>Online Presence Management</h2>
             <div class="service-grid">
                 <div class="service-item">
                     <div class="service-content">
-                        <img src="./Assets/Images/reput.jpg" alt="Reputation Management" class="service-image">
-                        <div class="service-text">
-                            <h3>Reputation Management</h3>
-                            <p>We manage your online reputation to build trust and attract more customers.</p>
+                        <div class="service-main">
+                            <img src="./Assets/Images/reput.jpg" alt="Reputation Management" class="service-image">
+                            <div class="service-text">
+                                <h3>Reputation Management</h3>
+                                <p>We manage your online reputation to build trust and attract more customers.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-list">
-                        <h4>Our Services Include:</h4>
-                        <ul>
-                            <li>Online Review Management</li>
-                            <li>Customer Engagement</li>
-                            <li>Content Creation</li>
-                            <li>Crisis Management</li>
-                            <li>Monthly Reporting</li>
-                        </ul>
-                        <button class="learn-more-button" onclick="toggleServiceDetails(this)">Learn More</button>
-
-                    </div>
-                    <div id="reputation-details" class="service-details" style="display: none;">                        <h1 style="text-align: center;">What is an Online Presence?</h1>
-                        <div class="content-wrapper">
-                            <div class="text-content">
-                                <p>An online presence refers to your digital footprint in today's interconnected world. It encompasses various elements that collectively shape how you are perceived online:</p>
-                                <ul>
-                                    <li><strong>Website:</strong> Your central hub for showcasing services, products, and brand stories.</li>
-                                    <li><strong>Social Media Profiles:</strong> Platforms for engaging with your audience and building a community.</li>
-                                    <li><strong>Online Reviews:</strong> Customer feedback that influences potential clients and establishes credibility.</li>
-                                    <li><strong>Content Creation:</strong> Blogs, videos, and posts that share your expertise and insights.</li>
-                                    <li><strong>Email Communication:</strong> Direct engagement with your audience through newsletters and updates.</li>
-                                </ul>
-                            </div>
-                        <div>
-                        <h1 style="text-align: center;">Why Does Having an Online Presence Matter?</h1>
-                        <div class="content-wrapper">
-                            <div class="text-content">
-                                <p>In today’s digital landscape, your online presence is more crucial than ever. Here are compelling reasons why:</p>
-                                <ul>
-                                    <li><strong>Visibility:</strong> An online presence places you on the digital map, making it easier for potential clients, employers, or collaborators to find you.</li>
-                                    <li><strong>Credibility:</strong> A well-maintained online profile enhances professionalism and showcases your skills to a broader audience. </li>
-                                    <li><strong>Networking Opportunities:</strong>Engaging online opens doors to valuable connections with industry leaders and peers.</li>
-                                    <li><strong>Brand Building:</strong> Your online presence allows you to curate a personal brand, communicate your values, and share your story.</li>
-                                    <li><strong>Showcase Your Work:</strong> A strong online presence provides a platform to highlight achievements and contributions, helping you stand out in a competitive market.</li>
-                                </ul>
-                            </div>
-                    </div>
-                </div>
-                <div>
-                    <h1 style="text-align: center;"> The Power of Online Reviews</h1>
-                    <div class="content-wrapper">
-                        <div class="text-content">
-                            <p>Having an online presence isn't just about showcasing skills; it also involves managing your reputation. Online reviews significantly influence your credibility and visibility. Here’s why they matter:</p>
+                        <div class="service-list">
+                            <h4>Our Services Include:</h4>
                             <ul>
-                                <li><strong>Build Trust:</strong> Positive reviews foster trust and can set you apart from competitors. Prospective clients often rely on the experiences of others when making decisions.</li>
-                                <li><strong>Enhance Visibility:</strong> Search engines prioritize businesses with strong online reputations, increasing your chances of appearing in relevant searches. </li>
-                                <li><strong>Gain Insights:</strong> Feedback from reviews provides valuable insights into strengths and areas for improvement, allowing for continuous growth .</li>
-                                <li><strong>Engage with Your Audience:</strong> Responding to reviews shows that you value customer feedback and are committed to providing an excellent experience./li>
-                                <li><strong>Boost Conversion Rates:</strong> High ratings can lead to higher conversion rates, as customers are more likely to choose services with positive reviews.</li>
+                                <li>Online Review Management</li>
+                                <li>Customer Engagement</li>
+                                <li>Content Creation</li>
+                                <li>Crisis Management</li>
+                                <li>Monthly Reporting</li>
                             </ul>
+                            <p>Please note that the services listed above are not limited to what our company can offer. We specialize in tailoring our services to meet the unique needs of each business. If you have specific requirements or need customized solutions, please contact us to discuss how we can assist you further.</p></p>
+                            <button class="learn-more-button" onclick="toggleServiceDetails(this)">Learn More</button>
                         </div>
-                    <p>Let BizzViz help you enhance your online presence and build trust with your customers.</p>
-                    <a href="#contact" class="contact-button">Contact Us Today</a>
+                    </div>
+                    <div id="reputation-details" class="service-details">
+                        <div class="content-wrapper">
+                            <div class="main-content">
+                                <div class="expandable-card">
+                                    <h1 class="card-header">What is an Online Presence?</h1>
+                                    <div class="card-content">
+                                        <div class="content-with-image">
+                                            <div class="text-content">
+                                                <p>An online presence refers to your digital footprint in today's interconnected world. It encompasses various elements that collectively shape how you are perceived online:</p>
+                                                <ul>
+                                                    <li><strong>Website:</strong> Your central hub for showcasing services, products, and brand stories.</li>
+                                                    <li><strong>Social Media Profiles:</strong> Platforms for engaging with your audience and building a community.</li>
+                                                    <li><strong>Online Reviews:</strong> Customer feedback that influences potential clients and establishes credibility.</li>
+                                                    <li><strong>Content Creation:</strong> Blogs, videos, and posts that share your expertise and insights.</li>
+                                                    <li><strong>Email Communication:</strong> Direct engagement with your audience through newsletters and updates.</li>
+                                                </ul>
+                                            </div>
+                                            <img src="./Assets/Images/dig-presence.jpg" alt="Digital Presence" class="content-image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="expandable-card">
+                                    <h1 class="card-header">Why Does Having an Online Presence Matter?</h1>
+                                    <div class="card-content">
+                                        <div class="content-with-image">
+                                            <div class="text-content">
+                                                <p>In today's digital landscape, your online presence is more crucial than ever. Here are compelling reasons why:</p>
+                                                <ul>
+                                                    <li><strong>Visibility:</strong> An online presence places you on the digital map, making it easier for potential clients, employers, or collaborators to find you.</li>
+                                                    <li><strong>Credibility:</strong> A well-maintained online profile enhances professionalism and showcases your skills to a broader audience.</li>
+                                                    <li><strong>Networking Opportunities:</strong> Engaging online opens doors to valuable connections with industry leaders and peers.</li>
+                                                    <li><strong>Brand Building:</strong> Your online presence allows you to curate a personal brand, communicate your values, and share your story.</li>
+                                                    <li><strong>Showcase Your Work:</strong> A strong online presence provides a platform to highlight achievements and contributions, helping you stand out in a competitive market.</li>
+                                                </ul>
+                                            </div>
+                                            <img src="./Assets/Images/why.jpg" alt="Why Online Presence Matters" class="content-image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="expandable-card">
+                                    <h1 class="card-header">The Power of Online Reviews</h1>
+                                    <div class="card-content">
+                                        <div class="content-with-image">
+                                            <div class="text-content">
+                                                <p>Having an online presence isn't just about showcasing skills; it also involves managing your reputation. Online reviews significantly influence your credibility and visibility. Here's why they matter:</p>
+                                                <ul>
+                                                    <li><strong>Build Trust:</strong> Positive reviews foster trust and can set you apart from competitors. Prospective clients often rely on the experiences of others when making decisions.</li>
+                                                    <li><strong>Enhance Visibility:</strong> Search engines prioritize businesses with strong online reputations, increasing your chances of appearing in relevant searches.</li>
+                                                    <li><strong>Gain Insights:</strong> Feedback from reviews provides valuable insights into strengths and areas for improvement, allowing for continuous growth.</li>
+                                                    <li><strong>Engage with Your Audience:</strong> Responding to reviews shows that you value customer feedback and are committed to providing an excellent experience.</li>
+                                                    <li><strong>Boost Conversion Rates:</strong> High ratings can lead to higher conversion rates, as customers are more likely to choose services with positive reviews.</li>
+                                                </ul>
+                                            </div>
+                                            <img src="./Assets/Images/reviews.jpg" alt="Online Reviews" class="content-image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-services">
+                                <h1>Our Sub-Services</h1>
+                                <div class="sub-service-item">
+                                    <h2>Reputation Management</h2>
+                                    <p>We manage your online reputation to build trust and attract more customers.</p>
+                                    <ul>
+                                        <li>Online Review Management</li>
+                                        <li>Customer Engagement</li>
+                                        <li>Content Creation</li>
+                                        <li>Crisis Management</li>
+                                        <li>Monthly Reporting</li>
+                                        <li>Digital Marketing</li>
+                                    </ul>
+                                </div>
+                                <div class="sub-service-item">
+                                    <h2>Social Media Management</h2>
+                                    <p>We create and manage your social media presence to engage effectively with your audience.</p>
+                                    <ul>
+                                        <li>Profile Creation</li>
+                                        <li>Content Scheduling</li>
+                                        <li>Audience Engagement</li>
+                                        <li>Analytics Reporting</li>
+                                    </ul>
+                                </div>
+                                <div class="sub-service-item">
+                                    <h2>Website Management</h2>
+                                    <p>We keep your website up-to-date and optimized for search engines.</p>
+                                    <ul>
+                                        <li>Content Updates</li>
+                                        <li>SEO Optimization</li>
+                                        <li>Performance Monitoring</li>
+                                        <li>Website Optimization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                          <!--end the reputation Management Card-->
             </div>
         </section>
-
-        <!--Beging IT Support Card-->
-        <h2>IT Support Services</h2>
+        <section id="it-support" class="service-category">
+            <h2>IT Support Services</h2>
             <div class="service-grid">
                 <div class="service-item">
                     <div class="service-content">
-                        <img src="./Assets/Images/support-card.jpg" alt="Reputation Management" class="service-image">
-                        <div class="service-text">
-                            <h3>Comprehensive Technical Assistance</h3>
-                            <p>We manage your online reputation to build trust and attract more customers.</p>
+                        <div class="service-main">
+                            <img src="./Assets/Images/it.jpg" alt="IT Support" class="service-image">
+                            <div class="service-text">
+                                <h3>Comprehensive Technical Assistance</h3>
+                                <p>We provide reliable IT support to keep your business running smoothly.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-list">
-                        <h4>Our Services Include:</h4>
-                        <ul>
-                            <li>Hardware Troubleshooting</li>
-                            <li>Software Installation and Updates</li>
-                            <li>Data Backup and Recovery</li>
-                            <li>Cybersecurity Management</li>
-                            <li>Remote Support</li>
-                            <li>IT Infrastructure Planning</li>
-                            <li>User Training and Support</li>
-                        </ul>
-                        <button class="learn-more-button" onclick="toggleServiceDetails(this)">Learn More</button>
-                    </div>
-                   
-                    <div id="reputation-details" class="service-details" style="display: none;">
-                        <h1 style="text-align: center;">What is an Online Presence?</h1>
-                        <div class="content-wrapper">
-                            <div class="text-content">
-                                <p>An online presence refers to your digital footprint in today's interconnected world. It encompasses various elements that collectively shape how you are perceived online:</p>
-                                <ul>
-                                    <li><strong>Website:</strong> Your central hub for showcasing services, products, and brand stories.</li>
-                                    <li><strong>Social Media Profiles:</strong> Platforms for engaging with your audience and building a community.</li>
-                                    <li><strong>Online Reviews:</strong> Customer feedback that influences potential clients and establishes credibility.</li>
-                                    <li><strong>Content Creation:</strong> Blogs, videos, and posts that share your expertise and insights.</li>
-                                    <li><strong>Email Communication:</strong> Direct engagement with your audience through newsletters and updates.</li>
-                                </ul>
-                            </div>
-                        <div>
-                        <h1 style="text-align: center;">Why Does Having an Online Presence Matter?</h1>
-                        <div class="content-wrapper">
-                            <div class="text-content">
-                                <p>In today’s digital landscape, your online presence is more crucial than ever. Here are compelling reasons why:</p>
-                                <ul>
-                                    <li><strong>Visibility:</strong> An online presence places you on the digital map, making it easier for potential clients, employers, or collaborators to find you.</li>
-                                    <li><strong>Credibility:</strong> A well-maintained online profile enhances professionalism and showcases your skills to a broader audience. </li>
-                                    <li><strong>Networking Opportunities:</strong>Engaging online opens doors to valuable connections with industry leaders and peers.</li>
-                                    <li><strong>Brand Building:</strong> Your online presence allows you to curate a personal brand, communicate your values, and share your story.</li>
-                                    <li><strong>Showcase Your Work:</strong> A strong online presence provides a platform to highlight achievements and contributions, helping you stand out in a competitive market.</li>
-                                </ul>
-                            </div>
-                    </div>
-                </div>
-                <div>
-                    <h1 style="text-align: center;">Why Does Having an Online Presence Matter?</h1>
-                    <div class="content-wrapper">
-                        <div class="text-content">
-                            <p>In today’s digital landscape, your online presence is more crucial than ever. Here are compelling reasons why:</p>
+                        <div class="service-list">
+                            <h4>Our Services Include:</h4>
                             <ul>
-                                <li><strong>Visibility:</strong> An online presence places you on the digital map, making it easier for potential clients, employers, or collaborators to find you.</li>
-                                <li><strong>Credibility:</strong> A well-maintained online profile enhances professionalism and showcases your skills to a broader audience. </li>
-                                <li><strong>Networking Opportunities:</strong>Engaging online opens doors to valuable connections with industry leaders and peers.</li>
-                                <li><strong>Brand Building:</strong> Your online presence allows you to curate a personal brand, communicate your values, and share your story.</li>
-                                <li><strong>Showcase Your Work:</strong> A strong online presence provides a platform to highlight achievements and contributions, helping you stand out in a competitive market.</li>
+                                <li>Hardware Troubleshooting</li>
+                                <li>Software Installation and Updates</li>
+                                <li>Data Backup and Recovery</li>
+                                <li>Cybersecurity Management</li>
+                                <li>Remote Support</li>
+                                <li>IT Infrastructure Planning</li>
+                                <li>User Training and Support</li>
                             </ul>
+                            <p>Please note that the services listed above are not limited to what our company can offer. We specialize in tailoring our services to meet the unique needs of each business. If you have specific requirements or need customized solutions, please contact us to discuss how we can assist you further.</p>
+                            <button class="learn-more-button" onclick="toggleServiceDetails(this)">Learn More</button>
                         </div>
-                    <p>Let BizzViz help you enhance your online presence and build trust with your customers.</p>
-                    <a href="#contact" class="contact-button">Contact Us Today</a>
+                    </div>
+                    <div id="it-support-details" class="service-details">
+                        <div class="content-wrapper">
+                            <div class="main-content">
+                                <div class="expandable-card">
+                                    <h1 class="card-header">Focus on Your Business, Leave IT to Us!</h1>
+                                    <div class="card-content">
+                                        <div class="content-with-image">
+                                            <div class="text-content">
+                                                <p>Reliable IT support is essential to the success of any modern business. Here's how it can benefit your company:</p>
+                                                <ul>
+                                                    <li><strong>Increased Productivity:</strong> With reliable IT systems and prompt support, your team can work efficiently without technical interruptions.</li>
+                                                    <li><strong>Expert Guidance:</strong> Our experienced IT professionals help you make informed decisions about technology investments and strategy.</li>
+                                                    <li><strong>Peace of Mind:</strong> Knowing that your IT infrastructure is in capable hands allows you to focus on business growth, not technical problems.</li>
+                                                    <li><strong>Cost Savings:</strong> Prevent costly downtime and avoid emergency IT repair expenses with our proactive support services.</li>
+                                                    <li><strong>Future-Proofing:</strong> We ensure that your IT systems are scalable and ready for future growth, adapting to your evolving business needs.</li>
+                                                </ul>
+                                            </div>
+                                            <img src="./Assets/Images/team-colab.jpg" alt="Focus on Business Growth" class="content-image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-content">
+                                <div class="expandable-card">
+                                    <h1 class="card-header">How IT Support Empowers Your Business</h1>
+                                    <div class="card-content">
+                                        <div class="content-with-image">
+                                            <div class="text-content">
+                                                <p>Unlock the full potential of your business with tailored IT solutions. At BizzViz, we go beyond just fixing problems—we empower your business to thrive in the digital age.</p>
+                                                <ul>
+                                                    <li><strong>Accelerate Innovation:</strong> Stay ahead of the competition with cutting-edge IT tools and strategies that foster creativity and streamline operations.</li>
+                                                    <li><strong>Strengthen Security:</strong> Protect your business from cyber threats with state-of-the-art security solutions, keeping your data and operations safe. </li>
+                                                    <li><strong>Peace of Mind:</strong> We design IT support plans that align with your specific business goals, ensuring technology works for you, not against you. </li>
+                                                    <li><strong>Cost Savings:</strong> Whether you're a small business or scaling up, our IT support grows with you, ensuring your systems are always ready for what's next.</li>
+                                                    <li><strong>Future-Proofing:</strong> Our proactive monitoring and regular IT audits ensure your systems are optimized for peak performance, minimizing issues before they arise.</li>
+                                                </ul>
+                                                <p>With our expert support, your business can innovate, grow, and remain secure—today and in the future.</p>
+                                            </div>
+                                            <img src="./Assets/Images/empower.jpg" alt="Focus on Business Growth" class="content-image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-content">
+                                <div class="expandable-card">
+                                    <h1 class="card-header">Clear Need for Help with IT Services</h1>
+                                    <div class="card-content">
+                                        <div class="content-with-image">
+                                            <div class="text-content">
+                                                <p>Reliable IT support is essential to the success of any modern business. Here's how it can benefit your company:</p>
+                                                <ul>
+                                                    <li><strong>Increased Productivity:</strong> With reliable IT systems and prompt support, your team can work efficiently without technical interruptions.</li>
+                                                    <li><strong>Expert Guidance:</strong> Our experienced IT professionals help you make informed decisions about technology investments and strategy.</li>
+                                                    <li><strong>Peace of Mind:</strong> Knowing that your IT infrastructure is in capable hands allows you to focus on business growth, not technical problems.</li>
+                                                    <li><strong>Cost Savings:</strong> Prevent costly downtime and avoid emergency IT repair expenses with our proactive support services.</li>
+                                                    <li><strong>Future-Proofing:</strong> We ensure that your IT systems are scalable and ready for future growth, adapting to your evolving business needs.</li>
+                                                </ul>
+                                            </div>
+                                            <img src="./Assets/Images/clear.jpg" alt="Focus on Business Growth" class="content-image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="sub-services">
+                                <h1>Our Sub-Services</h1>
+                                <div class="sub-service-item">
+                                    <h2>Network Management</h2>
+                                    <ul>
+                                        <li>Network Setup and Configuration</li>
+                                        <li>Firewall Management</li>
+                                        <li>Wi-Fi Optimization</li>
+                                        <li>VPN Setup and Support</li>
+                                    </ul>
+                                </div>
+                                <div class="sub-service-item">
+                                    <h2>Cybersecurity Services</h2>
+                                    <ul>
+                                        <li>Antivirus and Anti-malware Management</li>
+                                        <li>Security Audits and Assessments</li>
+                                        <li>Data Encryption</li>
+                                        <li>Employee Security Training</li>
+                                    </ul>
+                                </div>
+                                <div class="sub-service-item">
+                                    <h2>Cloud Services</h2>
+                                    <ul>
+                                        <li>Cloud Migration</li>
+                                        <li>Cloud Infrastructure Management</li>
+                                        <li>SaaS Application Support</li>
+                                        <li>Cloud Backup Solutions</li>
+                                    </ul>
+                                </div>  
+                                <div class="sub-service-item">
+                                    <h2>Hardware Support</h2>
+                                    <ul>
+                                        <li>Computer and Server Maintenance</li>
+                                        <li>Printer and Peripheral Setup</li>
+                                        <li>Hardware Upgrades</li>                                            
+                                        <li>Mobile Device Management</li>
+                                    </ul>
+                                </div>  
+                                <div class="sub-service-item">
+                                    <h2>Software Support</h2>
+                                    <ul>
+                                        <li>Software Installation and Updates</li>
+                                        <li>License Management</li>
+                                        <li>Custom Software Integration</li>                                           
+                                        <li>Troubleshooting and Bug Fixes</li>
+                                    </ul>
+                                </div>  
+                                <div class="sub-service-item">
+                                    <h2>IT Advising</h2>
+                                    <ul>
+                                        <li>Technology Roadmap Planning</li>
+                                        <li>IT Budget Planning</li>
+                                        <li>Vendor Management</li>                                           
+                                    </ul>
+                                </div>  
+                                <div class="sub-service-item">
+                                    <h2>Help Desk Support</h2>
+                                    <ul>
+                                        <li>Technical Support</li>
+                                        <li>Remote Troubleshooting</li>
+                                        <li>Ticket Management System</li> 
+                                        <li>Knowledge Base Creation and Maintenance</li>                                           
+                                    </ul>
+                                </div>  
+                        </div>
+                    </div>
                 </div>
-                          <!--end the IT Support Card-->
             </div>
         </section>
-
-
-        <section id="it-support" class="service-category">
-            <h2></h2>
-            <p>In today's fast-paced digital world, reliable IT support is crucial for the success of any business. Our comprehensive IT support services are designed to keep your systems running smoothly and your data secure.</p>
-            <!-- Add IT support services here similar to the online presence section -->
-        </section>
-
-        <section id="why-choose-us" class="why-choose-us">
-            <h2>Why Choose BizViz?</h2>
-            <ul>
-                <li>Expertise in both online presence management and IT support</li>
-                <li>Tailored solutions for small to medium-sized businesses</li>
-                <li>Customer-centric approach with dedicated support</li>
-            </ul>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <h2>Ready to Get Started?</h2>
-            <p>Contact us today to discuss how we can help enhance your online presence and optimize your IT operations.</p>
-            <a href="contact.html" class="contact-button">Contact Us</a>
-        </section>
     </main>
-
     <footer>
-        <!-- Your existing footer code -->
+        <footer>
+            <p>&copy; 2024 BizViz. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </footer>
     </footer>
-
     <script src="./Scripts/script.js"></script>
 </body>
 

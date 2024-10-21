@@ -12,35 +12,34 @@ function showSummary(imageElement) {
     summary.style.display = summary.style.display === 'block' ? 'none' : 'block'; // Toggle the summary visibility
 }
 
-// Function to toggle service details on button click
-function toggleDetails(buttonElement) {
-    const details = buttonElement.closest('.service-item').querySelector('.service-details');
-    
-    // Toggle display of the service details
-    const isVisible = details.style.display === 'block';
-    details.style.display = isVisible ? 'none' : 'block';
-    buttonElement.innerText = isVisible ? 'View Details' : 'Hide Details'; // Update button text accordingly
-}
-
-// Function to toggle service details with collapsing other details
-function toggleServiceDetails(container) {
-    const details = container.nextElementSibling; // Get the next sibling (service-details)
+function toggleServiceDetails(button) {
+    const serviceItem = button.closest('.service-item');
+    const details = serviceItem.querySelector('.service-details');
     
     // Collapse all other service details before expanding the clicked one
     const allDetails = document.querySelectorAll('.service-details');
     allDetails.forEach(detail => {
         if (detail !== details) {
-            detail.style.display = 'none'; // Hide other details
+            detail.style.display = 'none';
+            const otherButton = detail.closest('.service-item').querySelector('.learn-more-button');
+            otherButton.textContent = "Learn More";
+            otherButton.classList.remove('active');
         }
     });
     
     // Toggle the clicked service details
     if (details.style.display === "none" || details.style.display === "") {
-        details.style.display = "block"; // Show details
+        details.style.display = "block";
+        button.textContent = "Hide Details";
+        button.classList.add('active');
     } else {
-        details.style.display = "none"; // Hide details
+        details.style.display = "none";
+        button.textContent = "Learn More";
+        button.classList.remove('active');
     }
 }
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const scrollArrow = document.querySelector('.scroll-down-arrow a');
     
@@ -57,4 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cardHeaders = document.querySelectorAll('.card-header');
+    
+    cardHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
 });

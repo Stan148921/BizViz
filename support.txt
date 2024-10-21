@@ -1,0 +1,25 @@
+ <section id="it-support" class="service-category">
+            <h2></h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <div class="service-content">
+                        <img src="./Assets/Images/support-card.jpg" alt="IT Support" class="service-image">
+                        <div class="service-text">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="service-list">
+                        <h4>Our Services Include:</h4>
+                        <ul>
+                            <li>Hardware Troubleshooting</li>
+                            <li>Software Installation and Updates</li>
+                            <li>Data Backup and Recovery</li>
+                            <li>Cybersecurity Management</li>
+                            <li>Remote Support</li>
+                            <li>IT Infrastructure Planning</li>
+                            <li>User Training and Support</li>
+                        </ul>
+                        <button class="learn-more-button" onclick="toggleServiceDetails(this)">Learn More</button>
+                    </div>
+                    <div id="it-support-details" class="service-details">
