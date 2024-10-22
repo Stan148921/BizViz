@@ -5,6 +5,15 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show'); // Toggle the 'show' class
 }
+// Function to handle arrow click
+function handleArrowClick(arrowId) {
+    const targetElement = document.getElementById(arrowId);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
 
 // Function to show/hide the overall summary
 function showSummary(imageElement) {
@@ -38,47 +47,44 @@ function toggleServiceDetails(button) {
         button.classList.remove('active');
     }
 }
-
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Scroll Arrow
     const scrollArrow = document.querySelector('.scroll-down-arrow a');
-    
     if (scrollArrow) {
         scrollArrow.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Card Headers
     const cardHeaders = document.querySelectorAll('.card-header');
-    
     cardHeaders.forEach(header => {
         header.addEventListener('click', function() {
             const content = this.nextElementSibling;
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
         });
     });
-});
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+
+    // Smooth scrolling for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
+    });
+
+    // Reason Select
+    const reasonSelect = document.getElementById('reason');
+    const servicesGroup = document.getElementById('services-group');
+    reasonSelect.addEventListener('change', function() {
+        servicesGroup.style.display = this.value === 'service_inquiry' ? 'block' : 'none';
     });
 });
 
@@ -89,7 +95,7 @@ function animateCounter(el) {
     const increment = target / 200; // Adjust for speed
 
     const updateCount = () => {
-        if(count < target) {
+        if (count < target) {
             count += increment;
             el.innerText = Math.ceil(count);
             setTimeout(updateCount, 1);
@@ -107,9 +113,9 @@ const observerOptions = {
     threshold: 0.5
 };
 
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             animateCounter(entry.target);
             observer.unobserve(entry.target);
         }
@@ -123,6 +129,24 @@ counters.forEach(counter => {
 // Parallax effect
 window.addEventListener('scroll', () => {
     const parallax = document.querySelector('.services-intro');
-    let scrollPosition = window.pageYOffset;
-    parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    if (parallax) {
+        let scrollPosition = window.pageYOffset;
+        parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    }
+});
+    // Adding click event listeners for down arrows
+    const downArrow1 = document.getElementById('down-arrow1');
+    const downArrow2 = document.getElementById('down-arrow2');
+
+    if (downArrow1) {
+        downArrow1.addEventListener('click', function() {
+            handleArrowClick('target-section-id-1'); // Replace with the actual ID of the section you want to scroll to
+        });
+    }
+
+    if (downArrow2) {
+        downArrow2.addEventListener('click', function() {
+            handleArrowClick('target-section-id-2'); // Replace with the actual ID of the section you want to scroll to
+        });
+    }
 });

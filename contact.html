@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - BizViz</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -14,79 +15,92 @@
             <ul class="nav-links">
                 <li><a href="./Index.html">Home</a></li>
                 <li><a href="./services.html">Services</a></li>
-                <!--<li><a href="pricing.html">Pricing</a></li>-->   
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="contact-container">
-        <h1>Contact Us</h1>
-        <form action="send_email.php" method="POST" onsubmit="return validateForm()">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="services">What services are you interested in?</label>
-            <div class="dropdown">
-                <button type="button" class="dropbtn" onclick="toggleDropdown()">Select Services</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <label><input type="checkbox" value="web_design"> Web Design</label>
-                    <label><input type="checkbox" value="seo_optimization"> SEO Optimization</label>
-                    <label><input type="checkbox" value="content_writing"> Content Writing</label>
-                    <label><input type="checkbox" value="social_media_management"> Social Media Management</label>
-                    <label><input type="checkbox" value="email_marketing"> Email Marketing</label>
-                    <label><input type="checkbox" value="graphic_design"> Graphic Design</label>
-                    <label><input type="checkbox" value="consulting"> Consulting</label>
-                    <label><input type="checkbox" value="ecommerce"> E-Commerce Solutions</label>
-                </div>
-            </div>
-            <input type="hidden" name="services" id="selectedServices">
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="contact-button">Send Message</button>
-        </form>
+    <section class="contact-hero">
+        <h1>Get in Touch</h1>
+        <p>We're here to help you grow your business.</p>
     </section>
 
+    
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+    
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+    
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)">
+                </div>
+    
+                <div class="form-group">
+                    <select id="reason" name="reason" required>
+                        <option value="" disabled selected>Reason for Contacting</option>
+                        <option value="service_inquiry">Service Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="billing">Billing Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+    
+                <div id="services-group" class="form-group" style="display: none;">
+                    <label>What services are you interested in?</label>
+                    <div class="services-checkboxes">
+                        <label><input type="checkbox" name="services" value="web_design"> Web Design</label>
+                        <label><input type="checkbox" name="services" value="seo_optimization"> SEO Optimization</label>
+                        <label><input type="checkbox" name="services" value="content_writing"> Content Writing</label>
+                        <label><input type="checkbox" name="services" value="social_media_management"> Social Media Management</label>
+                        <label><input type="checkbox" name="services" value="email_marketing"> Email Marketing</label>
+                        <label><input type="checkbox" name="services" value="graphic_design"> Graphic Design</label>
+                        <label><input type="checkbox" name="services" value="consulting"> Consulting</label>
+                        <label><input type="checkbox" name="services" value="ecommerce"> E-Commerce Solutions</label>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                </div>
+    
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BizViz. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <!-- JavaScript to handle dropdown behavior -->
     <script src="./Scripts/script.js"></script>
+
+    <!-- Inline JavaScript to show/hide services based on reason selection -->
     <script>
-        function toggleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const reasonSelect = document.getElementById('reason');
+            const servicesGroup = document.getElementById('services-group');
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    const openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
+            reasonSelect.addEventListener('change', function() {
+                if (this.value === 'service_inquiry') {
+                    servicesGroup.style.display = 'block';
+                } else {
+                    servicesGroup.style.display = 'none';
                 }
-            }
-        }
-
-        // Capture selected services
-        const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const selectedValues = Array.from(checkboxes)
-                    .filter(i => i.checked)
-                    .map(i => i.value);
-                document.getElementById("selectedServices").value = selectedValues.join(', ');
             });
         });
-
-        function validateForm() {
-            // Simple validation logic can be added here
-            return true; // Allow form submission
-        }
     </script>
+
 </body>
 </html>

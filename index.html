@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizViz - Reputation & IT Advisor</title>
+    <title>BizzViz - Reputation & IT Advisor</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
-            <a href="./Index.html" class="logo">BizViz</a>
+            <a href="./Index.html" class="logo">BizzViz</a>
             <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="./Index.html">Home</a></li>
                 <li><a href="./services.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -76,9 +76,9 @@
     <div class="scroll-down-arrow">
         <a href="#about-us">&#9660;</a>
     </div>
-    <section class="why-choose-us">
+    <section id="about-us" class="why-choose-us">
         <div class="container">
-            <h2>Why Choose BizViz</h2>
+            <h2>Why Choose BizzViz</h2>
             <div class="content-container">
                 <div class="text-section">
                     <p>At BizzViz, we recognize the distinct challenges that small and medium-sized businesses encounter in today’s completive landscape. Our commitment is to provide tailored solution that cater specifically to your needs.</p>
@@ -102,7 +102,7 @@
         <a href="#next-section">&#9660;</a>
     </div>
     <h3 style="text-align: center;">We'd love to hear from you! Whether you have questions about our services or need support, fill out the form below and we'll get back to you shortly</h3>
-    <section class="contact-section">
+    <section id="next-section" class="contact-section">
         <div class="contact-container">
             <h2>Contact Us</h2>
             <form id="contactForm">
@@ -119,21 +119,31 @@
                 </div>
     
                 <div class="form-group">
-                    <label for="services">What services are you interested in?</label>
-                    <div class="custom-select">
-                        <select id="services" name="services" multiple>
-                            <option value="web_design">Web Design</option>
-                            <option value="seo_optimization">SEO Optimization</option>
-                            <option value="content_writing">Content Writing</option>
-                            <option value="social_media_management">Social Media Management</option>
-                            <option value="email_marketing">Email Marketing</option>
-                            <option value="graphic_design">Graphic Design</option>
-                            <option value="consulting">Consulting</option>
-                            <option value="ecommerce">E-Commerce Solutions</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <label for="reason">Reason for Contacting</label>
+                    <select id="reason" name="reason" required>
+                        <option value="" disabled selected>Select a reason</option>
+                        <option value="service_inquiry">Service Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="billing">Billing Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div id="services-group" class="form-group" style="display: none;">
+                    <label>What services are you interested in?</label>
+                    <div class="services-checkboxes">
+                        <label><input type="checkbox" name="services" value="web_design"> Web Design</label>
+                        <label><input type="checkbox" name="services" value="seo_optimization"> SEO Optimization</label>
+                        <label><input type="checkbox" name="services" value="content_writing"> Content Writing</label>
+                        <label><input type="checkbox" name="services" value="social_media_management"> Social Media Management</label>
+                        <label><input type="checkbox" name="services" value="email_marketing"> Email Marketing</label>
+                        <label><input type="checkbox" name="services" value="graphic_design"> Graphic Design</label>
+                        <label><input type="checkbox" name="services" value="consulting"> Consulting</label>
+                        <label><input type="checkbox" name="services" value="ecommerce"> E-Commerce Solutions</label>
+                        <label><input type="checkbox" name="services" value="other"> Other</label>
                     </div>
                 </div>
+                
     
                 <div class="form-group">
                     <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
@@ -145,7 +155,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 BizViz. All rights reserved.</p>
+        <p>&copy; 2024 BizzViz. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </footer>
 

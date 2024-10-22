@@ -1,30 +1,63 @@
-/* services.css */
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #00a8ff;
+    --text-color: #333;
+    --bg-color: #f0f4f8;
+    --white: #ffffff;
 }
 
 .services-intro {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
     text-align: center;
-    padding: 60px 20px;
-    background-color: #ffffff;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 120px 20px;
+    margin-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.services-intro::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .services-intro h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    font-size: 4rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeInDown 1s ease-out;
 }
 
-.service-category {
-    padding: 40px 20px;
-    max-width: 1200px;
+.services-intro p {
+    font-size: 1.4rem;
+    max-width: 800px;
     margin: 0 auto;
+    line-height: 1.8;
+    position: relative;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Service grid adjustments for mobile */
@@ -266,6 +299,32 @@ body {
 .text-content {
     width: 100%;
 }
+/* Footer */
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: white; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+    text-align: center; /* Centered text */
+}
+
+.footer-links {
+    list-style: none; /* Remove list styles */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li {
+    display: inline; /* Inline display for footer links */
+    margin: 0 10px; /* Space between links */
+}
+
+.footer-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* White text color */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+.footer-links a:hover {
+    color: #007bff; /* Color change on hover */
+}
 
 @media (min-width: 768px) {
     .content-with-image {
@@ -288,3 +347,5 @@ body {
             max-width: 500px;
         }
     }
+
+    
