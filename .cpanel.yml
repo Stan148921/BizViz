@@ -1,7 +1,5 @@
 version: 2
 deployment:
   commands:
-    - echo "Starting the deployment process..."
-    - echo "Copying files to public_html directory..."
-    - cp -r * /home/bizzaehz/public_html/bizzviz/
-    - echo "Deployment completed successfully."
+    - echo "Deploying the application..."
+    - cp -r * https://github.com/Stan148921/BizViz.git
