@@ -133,9 +133,11 @@ nav {
     position: absolute;
     width: 100%;
     display: none; /* Hide all slides by default */
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    top: 0; /* Aligns the top of the slide with the hero section */
+    bottom: 0; /* Aligns the bottom of the slide with the hero section */
 }
 
  
@@ -153,9 +155,9 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
-    height: 100%;
-    padding: 20px;
+    justify-content: center; /* Centers the content vertically */
+    height: 100%; /* Make sure it occupies full height */
+    padding: 20px; /* Adjust padding if needed */
     max-width: 90%;
     z-index: 3;
     opacity: 0;
@@ -218,18 +220,19 @@ nav {
 .hero-content p {
     color: white; /* Set font color to white */
     text-align: center; /* Center align text for better visibility */
+    margin: 0; /* Reset margins */
 }
 
 .hero-content h1 {
-    font-size: 4vw;; /* Adjusted font size for better fit */
-    margin-bottom: 20px; /* Adjusted margin */
+    font-size: 4vw; /* Adjusted font size for better fit */
+    margin-bottom: 20px; /* Consistent bottom margin */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
     font-size: 1rem; /* Adjusted font size for better fit */
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto; /* Ensure consistent horizontal centering */
     line-height: 1.8;
 }
 .hero-content .btn {
@@ -484,11 +487,11 @@ nav {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
     border: none;
-    border-radius: 50px;
-    font-size: 18px;
+    border-radius: 8px;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .submit-btn:hover {
