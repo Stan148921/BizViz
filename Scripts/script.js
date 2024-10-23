@@ -1,7 +1,9 @@
 // Function to toggle the mobile menu
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show'); // Toggle the 'show' class
+    if (navLinks) {
+        navLinks.classList.toggle('show');
+    }
 }
 
 // Function to handle arrow click
@@ -14,40 +16,46 @@ function handleArrowClick(arrowId) {
 
 // Function to show/hide the overall summary
 function showSummary(imageElement) {
-    const summary = document.querySelector('.overall-summary'); // Select the overall summary
-    summary.style.display = summary.style.display === 'block' ? 'none' : 'block'; // Toggle the summary visibility
+    const summary = document.querySelector('.overall-summary');
+    if (summary) {
+        summary.classList.toggle('visible'); // Toggle the visibility class instead of direct style
+    }
 }
 
 function toggleServiceDetails(button) {
     const serviceItem = button.closest('.service-item');
-    const details = serviceItem.querySelector('.service-details');
+    const details = serviceItem ? serviceItem.querySelector('.service-details') : null;
 
-    // Collapse all other service details before expanding the clicked one
-    const allDetails = document.querySelectorAll('.service-details');
-    allDetails.forEach(detail => {
-        if (detail !== details) {
-            detail.style.display = 'none';
-            const otherButton = detail.closest('.service-item').querySelector('.learn-more-button');
-            otherButton.textContent = "Learn More";
-            otherButton.classList.remove('active');
+    if (details) {
+        // Collapse all other service details before expanding the clicked one
+        const allDetails = document.querySelectorAll('.service-details');
+        allDetails.forEach(detail => {
+            if (detail !== details) {
+                detail.style.display = 'none';
+                const otherButton = detail.closest('.service-item')?.querySelector('.learn-more-button');
+                if (otherButton) {
+                    otherButton.textContent = "Learn More";
+                    otherButton.classList.remove('active');
+                }
+            }
+        });
+
+        // Toggle the clicked service details
+        if (details.style.display === "none" || details.style.display === "") {
+            details.style.display = "block";
+            button.textContent = "Hide Details";
+            button.classList.add('active');
+        } else {
+            details.style.display = "none";
+            button.textContent = "Learn More";
+            button.classList.remove('active');
         }
-    });
-
-    // Toggle the clicked service details
-    if (details.style.display === "none" || details.style.display === "") {
-        details.style.display = "block";
-        button.textContent = "Hide Details";
-        button.classList.add('active');
-    } else {
-        details.style.display = "none";
-        button.textContent = "Learn More";
-        button.classList.remove('active');
     }
 }
 
 // Animated counters
 function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-target'));
+    const target = parseInt(el.getAttribute('data-target'), 10);
     let count = 0;
     const increment = target / 200; // Adjust for speed
 
@@ -55,7 +63,7 @@ function animateCounter(el) {
         if (count < target) {
             count += increment;
             el.innerText = Math.ceil(count);
-            setTimeout(updateCount, 1);
+            setTimeout(updateCount, 10); // Slightly increase timeout for smoother effect
         } else {
             el.innerText = target;
         }
@@ -64,17 +72,19 @@ function animateCounter(el) {
     updateCount();
 }
 
-// Trigger counter animation when in view
-const observerOptions = {
-    threshold: 0.5
-};
-
-// Parallax effect
+// Parallax effect (with throttling)
+let isScrolling = false;
 window.addEventListener('scroll', () => {
-    const parallax = document.querySelector('.services-intro');
-    if (parallax) {
-        let scrollPosition = window.pageYOffset;
-        parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            const parallax = document.querySelector('.services-intro');
+            if (parallax) {
+                let scrollPosition = window.pageYOffset;
+                parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            }
+            isScrolling = false;
+        });
+        isScrolling = true;
     }
 });
 
@@ -97,7 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
     cardHeaders.forEach(header => {
         header.addEventListener('click', function() {
             const content = this.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            if (content) {
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            }
         });
     });
 
@@ -105,9 +117,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
@@ -117,11 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (reasonSelect && servicesGroup) {
         reasonSelect.addEventListener('change', function() {
-            if (this.value === 'service_inquiry') {
-                servicesGroup.style.display = 'block';
-            } else {
-                servicesGroup.style.display = 'none';
-            }
+            servicesGroup.style.display = this.value === 'service_inquiry' ? 'block' : 'none';
         });
     }
 
@@ -150,9 +161,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.5 });
 
     counters.forEach(counter => {
         observer.observe(counter);
+    });
+
+    // Slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.querySelector('.next').addEventListener('click', function() {
+        changeSlide(currentSlide + 1);
+    });
+
+    document.querySelector('.prev').addEventListener('click', function() {
+        changeSlide(currentSlide - 1);
+    });
+
+    function changeSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (index + totalSlides) % totalSlides; // Loop back to start or end
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Auto Slide
+    const autoSlide = setInterval(() => {
+        changeSlide(currentSlide + 1);
+    }, 5000);
+
+    // Clear interval on page unload
+    window.addEventListener('beforeunload', () => {
+        clearInterval(autoSlide);
     });
 });
