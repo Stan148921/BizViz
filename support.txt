@@ -22,4 +22,4 @@
                         </ul>
                         <button class="learn-more-button" onclick="toggleServiceDetails(this)">Learn More</button>
                     </div>
-                    <div id="it-support-details" class="service-details">
+                    <div id="it-support-details" class="service-details"> 

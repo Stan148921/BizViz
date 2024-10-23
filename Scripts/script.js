@@ -1,10 +1,9 @@
-// script.js
-
 // Function to toggle the mobile menu
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show'); // Toggle the 'show' class
 }
+
 // Function to handle arrow click
 function handleArrowClick(arrowId) {
     const targetElement = document.getElementById(arrowId);
@@ -12,8 +11,6 @@ function handleArrowClick(arrowId) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
     }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
 
 // Function to show/hide the overall summary
 function showSummary(imageElement) {
@@ -24,7 +21,7 @@ function showSummary(imageElement) {
 function toggleServiceDetails(button) {
     const serviceItem = button.closest('.service-item');
     const details = serviceItem.querySelector('.service-details');
-    
+
     // Collapse all other service details before expanding the clicked one
     const allDetails = document.querySelectorAll('.service-details');
     allDetails.forEach(detail => {
@@ -35,7 +32,7 @@ function toggleServiceDetails(button) {
             otherButton.classList.remove('active');
         }
     });
-    
+
     // Toggle the clicked service details
     if (details.style.display === "none" || details.style.display === "") {
         details.style.display = "block";
@@ -47,6 +44,40 @@ function toggleServiceDetails(button) {
         button.classList.remove('active');
     }
 }
+
+// Animated counters
+function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    let count = 0;
+    const increment = target / 200; // Adjust for speed
+
+    const updateCount = () => {
+        if (count < target) {
+            count += increment;
+            el.innerText = Math.ceil(count);
+            setTimeout(updateCount, 1);
+        } else {
+            el.innerText = target;
+        }
+    };
+
+    updateCount();
+}
+
+// Trigger counter animation when in view
+const observerOptions = {
+    threshold: 0.5
+};
+
+// Parallax effect
+window.addEventListener('scroll', () => {
+    const parallax = document.querySelector('.services-intro');
+    if (parallax) {
+        let scrollPosition = window.pageYOffset;
+        parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Scroll Arrow
     const scrollArrow = document.querySelector('.scroll-down-arrow a');
@@ -81,66 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Reason Select
-       // Reason Select
-       const reasonSelect = document.getElementById('reason');
-       const servicesGroup = document.getElementById('services-group');
-       
-       if (reasonSelect && servicesGroup) {
-           reasonSelect.addEventListener('change', function() {
-               if (this.value === 'service_inquiry') {
-                   servicesGroup.style.display = 'block';
-               } else {
-                   servicesGroup.style.display = 'none';
-               }
-           });
-       }
+    const reasonSelect = document.getElementById('reason');
+    const servicesGroup = document.getElementById('services-group');
 
-// Animated counters
-function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-target'));
-    let count = 0;
-    const increment = target / 200; // Adjust for speed
-
-    const updateCount = () => {
-        if (count < target) {
-            count += increment;
-            el.innerText = Math.ceil(count);
-            setTimeout(updateCount, 1);
-        } else {
-            el.innerText = target;
-        }
-    };
-
-    updateCount();
-}
-
-// Trigger counter animation when in view
-const counters = document.querySelectorAll('.counter');
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-counters.forEach(counter => {
-    observer.observe(counter);
-});
-
-// Parallax effect
-window.addEventListener('scroll', () => {
-    const parallax = document.querySelector('.services-intro');
-    if (parallax) {
-        let scrollPosition = window.pageYOffset;
-        parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+    if (reasonSelect && servicesGroup) {
+        reasonSelect.addEventListener('change', function() {
+            if (this.value === 'service_inquiry') {
+                servicesGroup.style.display = 'block';
+            } else {
+                servicesGroup.style.display = 'none';
+            }
+        });
     }
-});
+
     // Adding click event listeners for down arrows
     const downArrow1 = document.getElementById('down-arrow1');
     const downArrow2 = document.getElementById('down-arrow2');
@@ -156,4 +140,19 @@ window.addEventListener('scroll', () => {
             handleArrowClick('target-section-id-2'); // Replace with the actual ID of the section you want to scroll to
         });
     }
+
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
 });

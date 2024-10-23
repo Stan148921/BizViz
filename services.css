@@ -1,10 +1,3 @@
-:root {
-    --primary-color: #0056b3;
-    --secondary-color: #00a8ff;
-    --text-color: #333;
-    --bg-color: #f0f4f8;
-    --white: #ffffff;
-}
 
 .services-intro {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -299,32 +292,7 @@
 .text-content {
     width: 100%;
 }
-/* Footer */
-footer {
-    background-color: #333; /* Dark background for footer */
-    color: white; /* White text color */
-    padding: 20px 0; /* Padding for footer */
-    text-align: center; /* Centered text */
-}
 
-.footer-links {
-    list-style: none; /* Remove list styles */
-    padding: 0; /* Remove padding */
-}
-
-.footer-links li {
-    display: inline; /* Inline display for footer links */
-    margin: 0 10px; /* Space between links */
-}
-
-.footer-links a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* White text color */
-    transition: color 0.3s ease; /* Transition for hover effect */
-}
-.footer-links a:hover {
-    color: #007bff; /* Color change on hover */
-}
 
 @media (min-width: 768px) {
     .content-with-image {
@@ -348,4 +316,3 @@ footer {
         }
     }
 
-    
