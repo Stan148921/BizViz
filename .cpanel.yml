@@ -1,5 +1,5 @@
-version: 2
+---
 deployment:
-  commands:
-    - echo "Deploying the application..."
-    - cp -r * https://github.com/Stan148921/BizViz.git
+  tasks:
+    - export DEPLOYPATH=/home/bizzaehz/public_html/bizzviz/
+    - /bin/cp -r * $DEPLOYPATH
