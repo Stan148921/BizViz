@@ -2,4 +2,4 @@ version: 2
 deployment:
   commands:
     - echo "Deploying the application..."
-    - cp -r * /home/bizzaehz/public_html/ 
+    - cp -r * /home/bizzaehz/public_html/bizzviz
