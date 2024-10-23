@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
+} 
 
 .services-intro::before {
     content: '';
@@ -151,7 +151,7 @@
     display: none;
     margin-top: 30px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
 }

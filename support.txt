@@ -14,7 +14,7 @@
                         <ul>
                             <li>Hardware Troubleshooting</li>
                             <li>Software Installation and Updates</li>
-                            <li>Data Backup and Recovery</li>
+                             <li>Data Backup and Recovery</li>
                             <li>Cybersecurity Management</li>
                             <li>Remote Support</li>
                             <li>IT Infrastructure Planning</li>
