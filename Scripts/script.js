@@ -81,12 +81,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Reason Select
-    const reasonSelect = document.getElementById('reason');
-    const servicesGroup = document.getElementById('services-group');
-    reasonSelect.addEventListener('change', function() {
-        servicesGroup.style.display = this.value === 'service_inquiry' ? 'block' : 'none';
-    });
-});
+       // Reason Select
+       const reasonSelect = document.getElementById('reason');
+       const servicesGroup = document.getElementById('services-group');
+       
+       if (reasonSelect && servicesGroup) {
+           reasonSelect.addEventListener('change', function() {
+               if (this.value === 'service_inquiry') {
+                   servicesGroup.style.display = 'block';
+               } else {
+                   servicesGroup.style.display = 'none';
+               }
+           });
+       }
 
 // Animated counters
 function animateCounter(el) {
