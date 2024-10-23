@@ -1,0 +1,5 @@
+version: 2
+deployment:
+  commands:
+    - echo "Deploying the application..."
+    - cp -r * /home/bizzaehz/public_html/repo  # Change this to the correct destination path
