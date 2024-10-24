@@ -106,7 +106,6 @@ nav {
         }
     }
     
-
     .nav-links.show {
         display: flex;
     }
@@ -115,7 +114,20 @@ nav {
         margin: 10px 0;
     }
 }
+@media (min-width: 1024px) {
+    nav {
+        justify-content: center; /* Centering the nav content */
+    }
 
+    .nav-links {
+        justify-content: center;
+        width: 60%; /* Adjust the width to keep links centered */
+    }
+
+    .nav-links li {
+        margin-left: 2rem; /* Increase spacing between links if necessary */
+    }
+}
 /* Hero Section */
 .hero-slider {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));

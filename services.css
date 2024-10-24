@@ -294,22 +294,63 @@
 }
 
 
-@media (min-width: 768px) {
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .services-intro {
+        padding: 60px 20px;
+    }
+
+    .services-intro h1 {
+        font-size: 2.5rem; /* Reduce font size */
+    }
+
+    .services-intro p {
+        font-size: 1.2rem; /* Reduce paragraph size */
+    }
+
+    /* Stack service items vertically */
+    .service-grid {
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    /* Make the content wrapper full-width */
+    .content-wrapper, .main-content, .sub-services {
+        width: 100%; /* Full width for smaller screens */
+        margin: 0 auto;
+        padding: 15px; /* Adjust padding */
+        box-shadow: none; /* Remove box-shadow for a simpler look */
+    }
+
+    /* Adjust sub-services */
+    .sub-services {
+        position: relative; /* Remove absolute positioning */
+        margin-top: 20px;
+    }
+
+    .service-list {
+        padding: 15px;
+    }
+
+    /* Adjust text and images for smaller screens */
+    .content-image {
+        width: 80%; /* Make images take up more space */
+    }
+
     .content-with-image {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: column; /* Stack content vertically */
     }
 
     .text-content {
-        width: 60%; /* Adjust as needed */
+        width: 100%; /* Full width */
+        text-align: center; /* Center-align text */
     }
 
-    .content-image {
-        width: 35%; /* Adjust as needed */
-        margin: 0; /* Remove the auto margin on larger screens */
+    /* Adjust font sizes for smaller screens */
+    .service-text h3, .service-list h4 {
+        font-size: 1.5rem;
     }
 }
+
     @media (min-width: 1200px) {
         .service-image {
             max-width: 500px;

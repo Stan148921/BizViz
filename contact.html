@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+     <script type="text/javascript">
+        (function(){
+            emailjs.init("kF-S2caDNYcjl0Mkf");
+        })();
+    </script>
+
 </head>
 <body> 
     <header> 
@@ -32,17 +39,17 @@
             <h2>Contact Us</h2>
             <form id="contactForm">
                 <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                    <input type="text" id="name" name="user_name" required placeholder="Your Name">
                 </div>
-    
+            
                 <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                    <input type="email" id="email" name="user_email" required placeholder="Your Email">
                 </div>
-    
+            
                 <div class="form-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)">
+                    <input type="tel" id="phone" name="user_phone" placeholder="Your Phone Number (Optional)">
                 </div>
-    
+            
                 <div class="form-group">
                     <label for="reason">Reason for Contacting</label>
                     <select id="reason" name="reason" required>
@@ -53,29 +60,24 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-                
+            
                 <div id="services-group" class="form-group" style="display: none;">
                     <label>What services are you interested in?</label>
                     <div class="services-checkboxes">
-                        <label><input type="checkbox" name="services" value="web_design"> Web Design</label>
-                        <label><input type="checkbox" name="services" value="seo_optimization"> SEO Optimization</label>
-                        <label><input type="checkbox" name="services" value="content_writing"> Content Writing</label>
-                        <label><input type="checkbox" name="services" value="social_media_management"> Social Media Management</label>
-                        <label><input type="checkbox" name="services" value="email_marketing"> Email Marketing</label>
-                        <label><input type="checkbox" name="services" value="graphic_design"> Graphic Design</label>
-                        <label><input type="checkbox" name="services" value="consulting"> Consulting</label>
-                        <label><input type="checkbox" name="services" value="ecommerce"> E-Commerce Solutions</label>
-                        <label><input type="checkbox" name="services" value="other"> Other</label>
+                        <label><input type="checkbox" name="services[]" value="web_design"> Web Design</label>
+                        <label><input type="checkbox" name="services[]" value="seo_optimization"> SEO Optimization</label>
+                        <!-- Add more checkboxes as needed -->
                     </div>
                 </div>
             
-    
                 <div class="form-group">
                     <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
                 </div>
-    
+            
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
+             
+        
         </div>
     </section>
     

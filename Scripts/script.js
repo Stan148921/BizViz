@@ -196,3 +196,22 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(autoSlide);
     });
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log('Form submission started');
+
+    const serviceID = 'service_qaf6shk';
+    const templateID = 'template_p7ao7kj';
+
+    console.log('Sending email...');
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Message sent successfully!');
+        }, function(error) {
+            console.error('FAILED...', error);
+            alert('Failed to send message. Error: ' + JSON.stringify(error));
+        });
+});
+
