@@ -114,20 +114,7 @@ nav {
         margin: 10px 0;
     }
 }
-@media (min-width: 1024px) {
-    nav {
-        justify-content: center; /* Centering the nav content */
-    }
 
-    .nav-links {
-        justify-content: center;
-        width: 60%; /* Adjust the width to keep links centered */
-    }
-
-    .nav-links li {
-        margin-left: 2rem; /* Increase spacing between links if necessary */
-    }
-}
 /* Hero Section */
 .hero-slider {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -255,16 +242,6 @@ nav {
     font-size: 1rem;
     border-radius: 50px;
     transition: background-color 0.3s ease;
-}
-.text-section .btn{
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1rem;
-    text-align: center;
-    border-radius: 50px;
-    display: inline-block;
 }
 
 .hero-content .btn:hover {
@@ -501,7 +478,7 @@ nav {
     color: var(--text-color);
     font-weight: 600;
 }
-
+ 
 .submit-btn {
     display: block;
     width: 100%;
@@ -509,7 +486,7 @@ nav {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
     border: none;
-    border-radius: 80px;
+    border-radius: 50px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
