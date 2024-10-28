@@ -1,102 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizzViz - Our Services</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./services.css">
-    <link rel="apple-touch-icon" href="./Assets/Images/fav_ios.png">
-    <link rel="icon" href="./Assets/Images/fav_web.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-     <script type="text/javascript">
-        (function(){
-            emailjs.init("kF-S2caDNYcjl0Mkf");
-        })();
-    </script>
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="./index.html" class="logo">BizzViz</a>
-            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
-            <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./about.html">About Us</a></li>
-                <li><a href="./contact.html">Contact Us</a></li>
-            </ul>
-        </nav> 
-    </header>
+// Function to toggle the mobile menu
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        navLinks.classList.toggle('show');
+    }
+}
 
-    <main>
-        <section class="services-intro">
-            <h1>Learn More About Our Offerings</h1>
-            <p>At BizzViz, we offer comprehensive solutions to enhance your online presence and streamline your IT operations. Our services are designed to help small to medium-sized businesses thrive in the digital landscape.</p>
-        </section>
+// Function to handle arrow click
+function handleArrowClick(arrowId) {
+    const targetElement = document.getElementById(arrowId);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
-        <section class="evaltext-section">
-            <div class="eval-container">
-                <h2>Request a Free Consultation</h2>
-                <p>Unlock your business potential with tailored strategies and expert support. Fill out the form below to schedule your complimentary consultation with BizzViz. Let’s work together to enhance your online presence and drive sustainable growth! Your privacy is important to us. We will not send unsolicited emails or sell your information to third parties.</p>
-            </div>
-        </section>
+// Function to show/hide the overall summary
+function showSummary(imageElement) {
+    const summary = document.querySelector('.overall-summary');
+    if (summary) {
+        summary.classList.toggle('visible'); // Toggle the visibility class instead of direct style
+    }
+}
 
-        <section class="contact-section">
-            <div class="contact-container">
-                <h2>Request a Free Consultation</h2>
-                <form id="evalform">
-                    <div class="form-group">
-                        <input type="name" id="name" name="bus_name" required placeholder="What is your business name?">
-                    </div>
-                    <div class="form-group">
-                        <input type="name" id="name" name="user_bus" placeholder="What is your name, or the name of the person we should reach out to?? (Optional)">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="bus_email" required placeholder="What is your email?">
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="user_phone" placeholder="What is your phone number? (Optional)">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_meth">Preferred Contact Method:</label>
-                        <select id="contact_meth" name="contact_meth" required>
-                            <option value="" disabled selected>Select your preferred contact method</option>
-                            <option value="phone">Phone</option>
-                            <option value="email">Email</option>
-                        </select>
-                    </div>
-                                       
-                    <div class="form-group">
-                        <label for="reason">What type of services are you interested in?</label>
-                        <select id="reason" name="reason" required>
-                            <option value="" disabled selected>Select a reason</option>
-                            <option value="web_design">Web Design</option>
-                            <option value="seo_optimization">SEO Optimization</option>
-                            <option value="content_writing">Content Writing</option>
-                            <option value="it_services">IT Services</option>
-                            <option value="social_media_management">Social Media Management</option>
-                            <option value="email_marketing">Email Marketing</option>
-                            <option value="graphic_design">Graphic Design</option>
-                            <option value="consulting">Consulting</option>
-                            <option value="e_commerce_solutions">E-Commerce Solutions</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>    
-            </div>
-        </section>
+function toggleServiceDetails(button) {
+    const serviceItem = button.closest('.service-item');
+    const details = serviceItem ? serviceItem.querySelector('.service-details') : null;
 
-        <footer>
-            <p>&copy; 2024 BizzViz. All rights reserved.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        </footer>
+    if (details) {
+        // Collapse all other service details before expanding the clicked one
+        const allDetails = document.querySelectorAll('.service-details');
+        allDetails.forEach(detail => {
+            if (detail !== details) {
+                detail.style.display = 'none';
+                const otherButton = detail.closest('.service-item')?.querySelector('.learn-more-button');
+                if (otherButton) {
+                    otherButton.textContent = "Learn More";
+                    otherButton.classList.remove('active');
+                }
+            }
+        });
 
-        <script src="./Scripts/script.js"></script>
-    </body>
-</html>
+        // Toggle the clicked service details
+        if (details.style.display === "none" || details.style.display === "") {
+            details.style.display = "block";
+            button.textContent = "Hide Details";
+            button.classList.add('active');
+        } else {
+            details.style.display = "none";
+            button.textContent = "Learn More";
+            button.classList.remove('active');
+        }
+    }
+}
+
+// Animated counters
+function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    let count = 0;
+    const increment = target / 200; // Adjust for speed
+
+    const updateCount = () => {
+        if (count < target) {
+            count += increment;
+            el.innerText = Math.ceil(count);
+            setTimeout(updateCount, 10); // Slightly increase timeout for smoother effect
+        } else {
+            el.innerText = target;
+        }
+    };
+
+    updateCount();
+}
+
+// Parallax effect (with throttling)
+let isScrolling = false;
+window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            const parallax = document.querySelector('.services-intro');
+            if (parallax) {
+                let scrollPosition = window.pageYOffset;
+                parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            }
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Scroll Arrow
+    const scrollArrow = document.querySelector('.scroll-down-arrow a');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // Card Headers
+    const cardHeaders = document.querySelectorAll('.card-header');
+    cardHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            if (content) {
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    });
+
+    // Smooth scrolling for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetElement = document.querySelector(this.getAttribute('href'));
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Reason Select
+    const reasonSelect = document.getElementById('reason');
+    const servicesGroup = document.getElementById('services-group');
+
+    if (reasonSelect && servicesGroup) {
+        reasonSelect.addEventListener('change', function() {
+            servicesGroup.style.display = this.value === 'service_inquiry' ? 'block' : 'none';
+        });
+    }
+
+    // Adding click event listeners for down arrows
+    const downArrow1 = document.getElementById('down-arrow1');
+    const downArrow2 = document.getElementById('down-arrow2');
+
+    if (downArrow1) {
+        downArrow1.addEventListener('click', function() {
+            handleArrowClick('target-section-id-1'); // Replace with the actual ID of the section you want to scroll to
+        });
+    }
+
+    if (downArrow2) {
+        downArrow2.addEventListener('click', function() {
+            handleArrowClick('target-section-id-2'); // Replace with the actual ID of the section you want to scroll to
+        });
+    }
+
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+
+    // Slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.querySelector('.next').addEventListener('click', function() {
+        changeSlide(currentSlide + 1);
+    });
+
+    document.querySelector('.prev').addEventListener('click', function() {
+        changeSlide(currentSlide - 1);
+    });
+
+    function changeSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (index + totalSlides) % totalSlides; // Loop back to start or end
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Auto Slide
+    const autoSlide = setInterval(() => {
+        changeSlide(currentSlide + 1);
+    }, 5000);
+
+    // Clear interval on page unload
+    window.addEventListener('beforeunload', () => {
+        clearInterval(autoSlide);
+    });
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log('Form submission started');
+
+    const serviceID = 'service_qaf6shk';
+    const templateID = 'template_p7ao7kj';
+
+    console.log('Sending email...');
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Message sent successfully!');
+        }, function(error) {
+            console.error('FAILED...', error);
+            alert('Failed to send message. Error: ' + JSON.stringify(error));
+        });
+});
