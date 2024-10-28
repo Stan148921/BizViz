@@ -20,6 +20,8 @@
     background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
     animation: rotate 20s linear infinite;
 }
+
+
  
 @keyframes rotate {
     0% { transform: rotate(0deg); }
@@ -356,3 +358,19 @@
             max-width: 500px;
         }
     }
+
+    /*Begin CSS for Eval.html*/
+
+   .eval-container h2{
+    text-align: center;
+    padding-bottom: 40px;;
+   }
+
+   .eval-container p{
+    text-align: center;
+    font-weight: lighter;
+   }
+
+   .submit-btn{
+    border-radius: 50px;
+   }

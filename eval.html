@@ -3,58 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizzViz - Reputation & IT Advisor</title>
+    <title>BizzViz - Our Services</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./services.css">
 </head>
 <body>
-    <header> 
-        <nav> 
+    <header>
+        <nav>
             <a href="./index.html" class="logo">BizzViz</a>
             <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./services.html">Services</a></li>
-                <!--<li><a href="pricing.html">Pricing</a></li>-->   
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
             </ul>
-        </nav>
+        </nav> 
     </header>
-    <section class="eval">
-        <div class="eval-grid">
-            <div class="eval-item">
-                <div class="eval-container" onclick="toggleServiceDetails(this)">
-                    <h3>Get Your Free Evaluation Today</h3>                </div>
-                </div>
-                <br>
+
+    <main>
+        <section class="services-intro">
+            <h1>Learn More About Our Offerings</h1>
+            <p>At BizzViz, we offer comprehensive solutions to enhance your online presence and streamline your IT operations. Our services are designed to help small to medium-sized businesses thrive in the digital landscape.</p>
+        </section>
+
+        <section class="evaltext-section">
+            <div class="eval-container">
+                <h2>Request a Free Consultation</h2>
+                <p>Unlock your business potential with tailored strategies and expert support. Fill out the form below to schedule your complimentary consultation with BizzViz. Let’s work together to enhance your online presence and drive sustainable growth! Your privacy is important to us. We will not send unsolicited emails or sell your information to third parties.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="calendly-section">
-        <div class="calendly-text">
-            <h2>Common Challenges We Can Address:</h2>
-            <p>In our 30-minute meeting, we will discuss the specific challenges your business is facing and explore how our services can help.</p>
-            <ul>
-                <li><strong>Customer Engagement:</strong> Discuss strategies to enhance engagement on your Facebook page and website.</li>
-                <li><strong>Online Presence Management:</strong> Effective ways to handle Google questions and reviews.</li>
-                <li><strong>Technical Support Needs:</strong> Solutions for technical hurdles your business may encounter.</li>
-                <li><strong>Website Management:</strong> Keep your business information up-to-date across all platforms.</li>
-                <li><strong>Social Media Strategies:</strong> Optimize your presence and engage your audience effectively.</li>
-            </ul>
-            <p><strong>Book a time that works for you, and let’s start addressing your business challenges together!</strong></p>
-        </div>
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2>Request a Free Consultation</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="name" id="name" name="bus_name" required placeholder="What is your business name?">
+                    </div>
+                    <div class="form-group">
+                        <input type="name" id="name" name="user_bus" placeholder="What is your name, or the name of the person we should reach out to?? (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="bus_email" required placeholder="What is your email?">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="user_phone" placeholder="What is your phone number? (Optional)">
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Contact Method:</label><br>
+                        <div>
+                            <input type="radio" id="contact_method_phone" name="contact_meth" value="phone" required>
+                            <label for="contact_method_phone">Phone</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="contact_method_email" name="contact_meth" value="email" required>
+                            <label for="contact_method_email">Email</label>
+                        </div>
+                    </div>
+                    <div class="form-group contact-method">
+                        <label for="reason">What type of services are you interested in?</label>
+                        <select id="reason" name="reason" required>
+                            <option value="" disabled selected>Select a reason</option>
+                            <option value="web_design">Web Design</option>
+                            <option value="seo_optimization">SEO Optimization</option>
+                            <option value="content_writing">Content Writing</option>
+                            <option value="it_services">IT Services</option>
+                            <option value="social_media_management">Social Media Management</option>
+                            <option value="email_marketing">Email Marketing</option>
+                            <option value="graphic_design">Graphic Design</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="e_commerce_solutions">E-Commerce Solutions</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>    
+            </div>
+        </section>
 
-        <div class="calendly-widget">
-            <div class="calendly-inline-widget" data-url="https://calendly.com/stan14892" style="min-width:320px;height:700px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        </div>
-    </section>
+        <footer>
+            <p>&copy; 2024 BizzViz. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </footer>
 
-    <footer>
-        <p>&copy; 2024 BizzViz - Reputation & IT Advisor</p>
-    </footer>
-
-    <script src="./Scripts/script.js"></script>
-</body>
+        <script src="./Scripts/script.js"></script>
+    </body>
 </html>
