@@ -197,20 +197,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log('Form submission started');
+/* Contact Form Script */
 
-    const serviceID = 'service_qaf6shk';
-    const templateID = 'template_p7ao7kj';
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const evalForm = document.getElementById('evalform');
 
-    console.log('Sending email...');
-    emailjs.sendForm(serviceID, templateID, this)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Message sent successfully!');
-        }, function(error) {
-            console.error('FAILED...', error);
-            alert('Failed to send message. Error: ' + JSON.stringify(error));
-        });
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
+
+    if (evalForm) {
+        evalForm.addEventListener('submit', handleFormSubmit);
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        console.log('Form submission started');
+
+        const form = event.target;
+        const serviceID = 'service_qaf6shk';
+        const templateID = form.id === 'contactForm' ? 'template_p7ao7kj' : 'template_n5igijt';
+
+        console.log('Sending email...');
+        emailjs.sendForm(serviceID, templateID, form)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showPopup('Thank you for your submission!', 'We will be in touch shortly.');
+                clearForm(form);
+            }, function(error) {
+                console.error('FAILED...', error);
+                showPopup('Error', 'Failed to send message. Please try again.', false);
+            });
+    }
+
+    function showPopup(title, message, isSuccess = true) {
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.innerHTML = `
+            <div class="popup-content ${isSuccess ? 'success' : 'error'}">
+                <h2>${title}</h2>
+                <p>${message}</p>
+                <button onclick="this.closest('.popup').remove()">Close</button>
+            </div>
+        `;
+        document.body.appendChild(popup);
+    }
+
+    function clearForm(form) {
+        form.reset();
+    }
 });
