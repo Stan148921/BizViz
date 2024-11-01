@@ -5,70 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="canonical" href="https://www.bizz-viz.com/terms" />
-    <title>Terms of Service</title>
-    <link rel="stylesheet" href="./style.css">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HYR4ESN93X');
-</script>
+    <title>Terms of Service - BizzViz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="terms.css">
 </head>
 <body>
+    <div id="cookie-banner">
+        <p>We use cookies to improve your experience. By continuing to use our site, you agree to our use of cookies and our <a href="./terms.html">Terms of Service</a>.</p>
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="declineCookies()">Decline</button>
+    </div>
     <header>
         <nav>
-            <a href="./index.html" class="logo">BizzViz</a> 
-            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#776;</button>
+            <a href="https://www.bizz-viz.com" class="logo">BizzViz</a>
+            <button class="hamburger" onclick="toggleMenu()" aria-expanded="false">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./services.html">Services</a></li>
                 <li><a href="./about.html">About Us</a></li>
                 <li><a href="./contact.html">Contact Us</a></li>
             </ul>
-        </nav> 
-    </header> 
-    <section class="tos">
-        <div class="container">
-            <br> 
-            <br>
-            <br>
-            <br>
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing and using this website ("Service"), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+        </nav>
+    </header>
 
+    <main>
+        <h1>Terms of Service</h1>
+        
+        <section>
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using this website ("Service"), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this service.</p>
+        </section>
+
+        <section>
             <h2>2. Modification of Terms</h2>
             <p>We reserve the right to update or modify these terms at any time without prior notice. Your continued use of the Service after any changes will constitute acceptance of the modified terms.</p>
+        </section>
 
+        <section>
             <h2>3. Use of Service</h2>
-            <p>You agree not to use the Service for any illegal or unauthorized purpose, and you agree to comply with all laws in your jurisdiction.</p>
+            <p>You agree not to use the Service for any illegal or unauthorized purposes and agree to comply with all laws in your jurisdiction.</p>
+        </section>
 
-            <h2>4. User Accounts</h2>
-            <p>When creating an account, you must provide accurate and complete information. You are solely responsible for maintaining the security of your account and for all activities that occur under your account.</p>
+        <section>
+            <h2>4. Cookie Use</h2>
+            <p>Our website uses cookies to enhance your browsing experience and provide personalized services. Cookies are small text files stored on your device that help us analyze website traffic, remember your preferences, and optimize site performance.</p>
+            <p>We use both session cookies (which expire when you close your browser) and persistent cookies (which remain on your device for a set period or until you delete them).</p>
+            <p>By using our website, you consent to our use of cookies in accordance with this policy. You can manage cookie preferences through your browser settings. Please note that disabling cookies may affect the functionality of our website.</p>
+        </section>
 
+        <section>
             <h2>5. Termination</h2>
             <p>We reserve the right to terminate or suspend access to our Service immediately, without prior notice, for any reason, including violation of these Terms.</p>
+        </section>
 
+        <section>
             <h2>6. Disclaimer of Warranties</h2>
             <p>The Service is provided on an "as is" and "as available" basis without any warranties, express or implied.</p>
+        </section>
 
+        <section>
             <h2>7. Limitation of Liability</h2>
-            <p>In no event shall the Service provider be liable for any indirect, incidental, special, consequential or punitive damages arising out of your use of the Service.</p>
+            <p>In no event shall the Service provider be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of the Service.</p>
+        </section>
 
+        <section>
             <h2>8. Governing Law</h2>
             <p>These Terms are governed in accordance with the laws of [Your State/Country], without regard to its conflict of law principles.</p>
+        </section>
 
+        <section>
             <h2>9. Contact Information</h2>
             <p>If you have any questions about these Terms, please contact us at: info@bizz-viz.com.</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="container">BizzViz. All rights reserved.</p>
-            <a href="mailto:info@biz-vizz.com">Info@Bizz-Viz.com</a> 
-        </div>
+        <p>&copy; 2024 BizzViz. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </footer>
+
+    <script src="./Scripts/script.js"></script>
 </body>
 </html>

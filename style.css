@@ -114,6 +114,22 @@ nav {
         margin: 10px 0;
     }
 }
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+}
+#cookie-banner button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
 
 /* Hero Section */
 .hero-slider {

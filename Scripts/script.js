@@ -195,11 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('beforeunload', () => {
         clearInterval(autoSlide);
     });
-});
 
-/* Contact Form Script */
-
-document.addEventListener('DOMContentLoaded', function() {
+    /* Contact Form Script */
     const contactForm = document.getElementById('contactForm');
     const evalForm = document.getElementById('evalform');
 
@@ -246,5 +243,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function clearForm(form) {
         form.reset();
+    }
+
+    function showCookieBanner() {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+
+    function acceptCookies() {
+        document.cookie = "cookies_accepted=true; max-age=" + 60*60*24*365 + "; path=/";
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadGoogleAnalytics();
+    }
+
+    function loadGoogleAnalytics() {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X";
+        document.head.appendChild(gaScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HYR4ESN93X');
+    }
+
+    function declineCookies() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Respect user's choice and don't set tracking cookies
+    }
+
+    // Check if cookies have been accepted
+    if (document.cookie.indexOf('cookies_accepted=true') === -1) {
+        showCookieBanner();
+    } else {
+        loadGoogleAnalytics();
     }
 });
