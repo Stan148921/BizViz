@@ -17,10 +17,11 @@
         })();
     </script>
 <body> 
-    <div id="cookie-banner">
-        <p>We use cookies to improve your experience. By continuing to use our site, you agree to our use of cookies and our <a href="./terms.html">Terms of Service</a>.</p>
-        <button onclick="acceptCookies()">Accept</button>
-        <button onclick="declineCookies()">Decline</button>
+    <div id="cookie-banner" style="display:none;">
+        <p>This website uses cookies to ensure you get the best experience on our website. 
+        <button id="accept-cookies">Accept</button>
+        <button id="decline-cookies">Decline</button>
+        </p>
     </div>
     <header> 
         <nav>
@@ -100,6 +101,6 @@
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
-    <script src="./Scripts/script.js"></script>
+    <script src="./Scripts/script.js" defer></script>
 </body>
 </html>

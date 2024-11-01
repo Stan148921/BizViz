@@ -244,38 +244,49 @@ document.addEventListener('DOMContentLoaded', function() {
     function clearForm(form) {
         form.reset();
     }
-   // Cookie Consent Functions
-   function showCookieBanner() {
-    document.getElementById('cookie-banner').style.display = 'block';
-}
-
-function acceptCookies() {
-    document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
-    document.getElementById('cookie-banner').style.display = 'none';
-    loadGoogleAnalytics();
-}
-
-function loadGoogleAnalytics() {
-    var gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X";
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptButton = document.getElementById('accept-cookies');
+        const declineButton = document.getElementById('decline-cookies');
+    
+        if (acceptButton) {
+            acceptButton.addEventListener('click', acceptCookies);
+        }
+    
+        if (declineButton) {
+            declineButton.addEventListener('click', declineCookies);
+        }
+    
+        // Check for cookies consent
+        if (document.cookie.indexOf("cookies_accepted=true") === -1) {
+            showCookieBanner();
+        }
+    });
+    
+    function showCookieBanner() {
+        document.getElementById('cookie-banner').style.display = 'block';
     }
-    gtag('js', new Date());
-    gtag('config', 'G-HYR4ESN93X');
-}
-
-function declineCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    // Respect user's choice and don't load Google Analytics
-}
-
-// Check for cookies consent
-if (document.cookie.indexOf("cookies_accepted=true") === -1) {
-    showCookieBanner();
-}
-});
+    
+    function acceptCookies() {
+        document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadGoogleAnalytics();
+    }
+    
+    function declineCookies() {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+    
+    function loadGoogleAnalytics() {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X";
+        document.head.appendChild(gaScript);
+    
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-HYR4ESN93X');
+    }
+});    
