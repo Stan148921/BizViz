@@ -18,7 +18,7 @@ function handleArrowClick(arrowId) {
 function showSummary(imageElement) {
     const summary = document.querySelector('.overall-summary');
     if (summary) {
-        summary.classList.toggle('visible'); // Toggle the visibility class instead of direct style
+        summary.classList.toggle('visible');
     }
 }
 
@@ -27,7 +27,6 @@ function toggleServiceDetails(button) {
     const details = serviceItem ? serviceItem.querySelector('.service-details') : null;
 
     if (details) {
-        // Collapse all other service details before expanding the clicked one
         const allDetails = document.querySelectorAll('.service-details');
         allDetails.forEach(detail => {
             if (detail !== details) {
@@ -40,7 +39,6 @@ function toggleServiceDetails(button) {
             }
         });
 
-        // Toggle the clicked service details
         if (details.style.display === "none" || details.style.display === "") {
             details.style.display = "block";
             button.textContent = "Hide Details";
@@ -57,13 +55,13 @@ function toggleServiceDetails(button) {
 function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-target'), 10);
     let count = 0;
-    const increment = target / 200; // Adjust for speed
+    const increment = target / 200;
 
     const updateCount = () => {
         if (count < target) {
             count += increment;
             el.innerText = Math.ceil(count);
-            setTimeout(updateCount, 10); // Slightly increase timeout for smoother effect
+            setTimeout(updateCount, 10);
         } else {
             el.innerText = target;
         }
@@ -88,8 +86,35 @@ window.addEventListener('scroll', () => {
     }
 });
 
+function showCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+}
+
+function acceptCookies() {
+    document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+    loadGoogleAnalytics();
+}
+
+function declineCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function loadGoogleAnalytics() {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-HYR4ESN93X');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Scroll Arrow
     const scrollArrow = document.querySelector('.scroll-down-arrow a');
     if (scrollArrow) {
         scrollArrow.addEventListener('click', function(e) {
@@ -102,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Card Headers
     const cardHeaders = document.querySelectorAll('.card-header');
     cardHeaders.forEach(header => {
         header.addEventListener('click', function() {
@@ -113,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -126,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Reason Select
     const reasonSelect = document.getElementById('reason');
     const servicesGroup = document.getElementById('services-group');
 
@@ -136,23 +158,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Adding click event listeners for down arrows
     const downArrow1 = document.getElementById('down-arrow1');
     const downArrow2 = document.getElementById('down-arrow2');
 
     if (downArrow1) {
         downArrow1.addEventListener('click', function() {
-            handleArrowClick('target-section-id-1'); // Replace with the actual ID of the section you want to scroll to
+            handleArrowClick('target-section-id-1');
         });
     }
 
     if (downArrow2) {
         downArrow2.addEventListener('click', function() {
-            handleArrowClick('target-section-id-2'); // Replace with the actual ID of the section you want to scroll to
+            handleArrowClick('target-section-id-2');
         });
     }
 
-    // Animated counters
     const counters = document.querySelectorAll('.counter');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -167,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(counter);
     });
 
-    // Slideshow
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
@@ -182,21 +201,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function changeSlide(index) {
         slides[currentSlide].classList.remove('active');
-        currentSlide = (index + totalSlides) % totalSlides; // Loop back to start or end
+        currentSlide = (index + totalSlides) % totalSlides;
         slides[currentSlide].classList.add('active');
     }
 
-    // Auto Slide
     const autoSlide = setInterval(() => {
         changeSlide(currentSlide + 1);
     }, 5000);
 
-    // Clear interval on page unload
     window.addEventListener('beforeunload', () => {
         clearInterval(autoSlide);
     });
 
-    /* Contact Form Script */
     const contactForm = document.getElementById('contactForm');
     const evalForm = document.getElementById('evalform');
 
@@ -244,49 +260,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function clearForm(form) {
         form.reset();
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        const acceptButton = document.getElementById('accept-cookies');
-        const declineButton = document.getElementById('decline-cookies');
-    
-        if (acceptButton) {
-            acceptButton.addEventListener('click', acceptCookies);
-        }
-    
-        if (declineButton) {
-            declineButton.addEventListener('click', declineCookies);
-        }
-    
-        // Check for cookies consent
-        if (document.cookie.indexOf("cookies_accepted=true") === -1) {
-            showCookieBanner();
-        }
-    });
-    
-    function showCookieBanner() {
-        document.getElementById('cookie-banner').style.display = 'block';
+
+    const acceptButton = document.getElementById('accept-cookies');
+    const declineButton = document.getElementById('decline-cookies');
+
+    if (acceptButton) {
+        acceptButton.addEventListener('click', acceptCookies);
     }
-    
-    function acceptCookies() {
-        document.cookie = "cookies_accepted=true; max-age=" + 60 * 60 * 24 * 365 + "; path=/";
-        document.getElementById('cookie-banner').style.display = 'none';
-        loadGoogleAnalytics();
+
+    if (declineButton) {
+        declineButton.addEventListener('click', declineCookies);
     }
-    
-    function declineCookies() {
-        document.getElementById('cookie-banner').style.display = 'none';
+
+    if (document.cookie.indexOf("cookies_accepted=true") === -1) {
+        showCookieBanner();
     }
-    
-    function loadGoogleAnalytics() {
-        var gaScript = document.createElement('script');
-        gaScript.async = true;
-        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X";
-        document.head.appendChild(gaScript);
-    
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-HYR4ESN93X');
-    }
-});    
+});
