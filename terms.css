@@ -1,42 +1,25 @@
-.tos {
-    padding: 40px 20px; /* Top/bottom padding and responsive horizontal padding */
-    background-color: #f9f9f9; /* Optional: light background color for contrast */
-}
-
-.container {
-    max-width: 800px; /* Limit container width for better readability */
-    margin: 0 auto; /* Center container */
+main {
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 20px;
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1 {
-    font-size: 2.5em; /* Size for main heading */
-    margin-bottom: 20px; /* Space below the heading */
-    text-align: center; /* Center align */
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 h2 {
-    font-size: 1.8em; /* Size for subheadings */
-    margin-top: 30px; /* Space above subheadings */
-    margin-bottom: 10px; /* Space below subheadings */
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 p {
-    font-size: 1em; /* Size for paragraphs */
-    line-height: 1.6; /* Improved line height for readability */
-    margin-bottom: 20px; /* Space below paragraphs */
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em; /* Slightly smaller font for smaller screens */
-    }
-
-    h2 {
-        font-size: 1.5em; /* Adjust heading size */
-    }
-
-    p {
-        font-size: 0.9em; /* Adjust paragraph size */
-    }
+    margin-bottom: 1rem;
 }
