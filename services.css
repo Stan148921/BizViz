@@ -1,4 +1,4 @@
-
+/* General Styling */
 .services-intro {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -17,14 +17,9 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 40%);
     animation: rotate 20s linear infinite;
 }
-
-.online-presence h2{
-    background-color: yellow;
-} 
-
 @keyframes rotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -33,9 +28,14 @@
 .services-intro h1 {
     font-size: 4rem;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .services-intro p {
@@ -47,21 +47,38 @@
     animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Service grid adjustments for mobile */
+/* Service Category Styles */
+.service-category h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto 20px;
+    display: block;
+    max-width: fit-content;
+    background: linear-gradient(135deg, #0056b3, #00a8ff);
+    text-align: center;
+}
+
+.service-category {
+    text-align: center;
+}
+
+/* Service Grid Styles for Mobile */
 .service-grid {
     display: flex;
-    flex-direction: column; /* Stack items on mobile */
-    gap: 30px; /* Space between items */
+    flex-direction: column;
+    gap: 30px;
 }
 
 .service-item {
@@ -75,6 +92,7 @@
 .service-item:hover {
     transform: translateY(-5px);
 }
+
 .service-content {
     display: flex;
     flex-direction: column;
@@ -100,6 +118,7 @@
     color: #2c3e50;
 }
 
+/* Service List Styles */
 .service-list {
     margin-top: 25px;
     background-color: #f9f9f9;
@@ -121,15 +140,21 @@
     margin-bottom: 10px;
     padding-left: 20px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .service-list li:before {
-    content: '•';
+    content: 'circle';
+    font-family: 'Material Icons';
     position: absolute;
     left: 0;
     color: #007bff;
 }
-
+.service-list li span {
+    display: inline-block;
+    vertical-align: middle;
+}
 .learn-more-button {
     display: inline-block;
     margin-top: 20px;
@@ -150,6 +175,7 @@
     transform: scale(1.05);
 }
 
+/* Service Details Section */
 .service-details {
     position: relative;
     display: none;
@@ -160,6 +186,7 @@
     overflow: hidden;
 }
 
+/* Content Wrapper */
 .content-wrapper {
     width: 65%;
     float: left;
@@ -192,6 +219,7 @@
     color: #2c3e50;
 }
 
+/* Expandable Card Styling */
 .expandable-card {
     margin-bottom: 20px;
     border: 1px solid #e0e0e0;
@@ -229,6 +257,7 @@
     border-bottom: none;
 }
 
+/* Contact Button Styles */
 .contact-button {
     display: inline-block;
     background-color: #2c3e50;
@@ -259,14 +288,18 @@
     margin-bottom: 5px;
 }
 
-.sub-services li::before {
-    content: '•';
+.service-list li::before {
+    content: 'check_circle';
+    font-family: 'Material Icons';
+    font-size: 18px;
     color: #007bff;
     position: absolute;
-    left: 5px;
-    top: 0;
+    left: -22px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
+/* Image Styles */
 .service-image {
     width: 100%;
     max-width: 400px;
@@ -277,13 +310,13 @@
 }
 
 .content-image {
-    max-width: 300px; /* Adjust this value as needed */
+    max-width: 300px;
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin: 20px auto; /* Centers the image and adds vertical spacing */
-    display: block; /* Ensures the margin auto works for centering */
+    margin: 20px auto;
+    display: block;
 }
 
 .content-with-image {
@@ -297,81 +330,27 @@
     width: 100%;
 }
 
-
-/* Adjust for smaller screens */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .services-intro {
         padding: 60px 20px;
     }
 
     .services-intro h1 {
-        font-size: 2.5rem; /* Reduce font size */
+        font-size: 2.5rem;
     }
 
-    .services-intro p {
-        font-size: 1.2rem; /* Reduce paragraph size */
-    }
-
-    /* Stack service items vertically */
     .service-grid {
-        gap: 20px; /* Reduce gap between items */
+        flex-direction: column;
     }
 
-    /* Make the content wrapper full-width */
-    .content-wrapper, .main-content, .sub-services {
-        width: 100%; /* Full width for smaller screens */
-        margin: 0 auto;
-        padding: 15px; /* Adjust padding */
-        box-shadow: none; /* Remove box-shadow for a simpler look */
+    .service-item {
+        width: 100%;
     }
 
-    /* Adjust sub-services */
     .sub-services {
-        position: relative; /* Remove absolute positioning */
-        margin-top: 20px;
-    }
-
-    .service-list {
-        padding: 15px;
-    }
-
-    /* Adjust text and images for smaller screens */
-    .content-image {
-        width: 80%; /* Make images take up more space */
-    }
-
-    .content-with-image {
-        flex-direction: column; /* Stack content vertically */
-    }
-
-    .text-content {
-        width: 100%; /* Full width */
-        text-align: center; /* Center-align text */
-    }
-
-    /* Adjust font sizes for smaller screens */
-    .service-text h3, .service-list h4 {
-        font-size: 1.5rem;
+        width: 100%;
+        position: static;
+        margin-top: 40px;
     }
 }
-
-    @media (min-width: 1200px) {
-        .service-image {
-            max-width: 500px;
-        }
-    }
-    /*Begin CSS for Eval.html*/
-
-   .eval-container h2{
-    text-align: center;
-    padding-bottom: 40px;;
-   }
-
-   .eval-container p{
-    text-align: center;
-    font-weight: lighter;
-   }
-
-   .submit-btn{
-    border-radius: 50px;
-   }
