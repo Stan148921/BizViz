@@ -21,7 +21,10 @@
     animation: rotate 20s linear infinite;
 }
 
- 
+.online-presence h2{
+    background-color: yellow;
+} 
+
 @keyframes rotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -357,7 +360,6 @@
             max-width: 500px;
         }
     }
-
     /*Begin CSS for Eval.html*/
 
    .eval-container h2{
