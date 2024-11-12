@@ -1,3 +1,9 @@
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #00a8ff;
+    --white: #ffffff;
+}
+
 /* General Styling for Body */
 body {
     background-color: #f0f4f8;
@@ -62,7 +68,7 @@ body {
 
 /* Content Section Layout */
 .content-section {
-    max-width: 1400px; 
+    max-width: 1400px;
     margin: 0 auto 100px;
     padding: 0 20px;
     box-sizing: border-box;
@@ -74,7 +80,6 @@ body {
     margin-bottom: 50px;
     text-align: center;
 }
-
 
 .content-section h2::after {
     content: '';
@@ -88,10 +93,14 @@ body {
 
 /* Content Grid for Service Cards */
 .content-grid {
- display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Adds spacing between cards */
-    justify-content: center; /* Center the grid items */
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content-card {
@@ -100,11 +109,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    height: auto; /* Let the height grow based on content */
-    display: flex; /* Ensures all content expands properly */
 }
 
 /* Hover effect for cards */
@@ -114,13 +118,28 @@ body {
 }
 
 /* Service Card Header Styling */
+.card-header::before {
+    content: '+';
+    font-size: 1.5rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
 .card-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 30px;
+    padding-right: 50px;
     font-size: 1.8rem;
     text-align: center;
     position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card-header::after {
@@ -134,26 +153,34 @@ body {
     transform: translateX(-50%);
 }
 
+.card-header.expanded::before {
+    content: '−';
+    transform: translateY(-50%) rotate(180deg);
+}
+
 /* Content within Service Cards */
 .card-content {
-    padding: 20px;
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: flex-start; /* Align content at the top */
-    min-height: 200px;
+    padding: 20px;
+    display: none; 
+}
+.card-content.expanded {
+    display: block; /* Show content when expanded */
 }
 
 .card-content p {
     font-weight: bold;
     text-align: center;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .card-content ul {
     list-style-type: none;
     padding-left: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-content li {
@@ -172,6 +199,10 @@ body {
     font-size: 1.4rem;
 }
 
+.card-content li:last-child {
+    margin-bottom: 0;
+}
+
 /* Utility Styles for Icons within Lists */
 .card-content li .material-icons {
     vertical-align: middle;
@@ -180,6 +211,7 @@ body {
     font-size: 1.5rem;
 }
 
+/* Call to Action Section */
 .call-to-action {
     background: linear-gradient(135deg, #0056b3, #00a8ff);
     color: white;
@@ -246,42 +278,51 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
     color: white;
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Media Queries for Responsive Layout */
-@media (min-width: 1400px) {
-    .content-card {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (max-width: 1200px) {
-    .content-card {
-        grid-template-columns: repeat(2, 1fr);
+    .content-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+        max-width: none; /* Remove max-width constraint */
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     .content-grid {
-        grid-template-columns: 1fr; /* 1 card per row on small screens */
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
+}
 
+@media (max-width: 767px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+    /* Other small screen adjustments */
     .call-to-action h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .services-intro {
         padding: 60px 20px;
     }
-
     .services-intro h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-
     .content-section h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    .hero-banner h1 {
+        font-size: 2.2rem;
+    }
+    .hero-banner p {
+        font-size: 1.1rem;
+    }
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 15px 40px;
     }
 }
