@@ -18,8 +18,8 @@ body {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
     text-align: center;
-    padding: 120px 20px;
-    margin-bottom: 80px;
+    padding: 80px 20px;
+    margin-bottom: 40px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
