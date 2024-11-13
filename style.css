@@ -18,6 +18,23 @@ body {
     font-family: 'Arial', sans-serif;
     color: var(--text-color);
 }
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-item h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1em;
+    color: #666;
+}
 
 /* Header Styles */
 header {
@@ -427,7 +444,7 @@ nav {
 
 .services-checkboxes label:hover {
     background-color: #e0e0e0;
-}
+} 
 
 .services-checkboxes input[type="checkbox"] {
     margin-right: 10px; /* Increased margin for better spacing */
