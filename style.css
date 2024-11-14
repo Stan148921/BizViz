@@ -35,6 +35,17 @@ body {
     font-size: 1em;
     color: #666;
 }
+.service-item {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);  
+}
 
 /* Header Styles */
 header {
@@ -174,8 +185,10 @@ nav {
     color: var(--white);
     text-align: center;
     padding: 120px 20px;
-    margin-bottom: 80px;
-    height: 40vh;
+    margin-bottom: 5px;
+    height: auto;
+    min-height: 300px;
+    padding: 60px 20px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -227,6 +240,86 @@ nav {
     }
 }
 
+/* Styling for the "What Do We Do?" section */
+.what-we-do-section {
+    background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    padding: 40px 0;
+    transition: transform 0.3s ease, margin-top 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.what-we-do-section:hover {
+    transform: translateY(-10px); 
+    margin-top: -10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.what-we-do-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adding subtle text shadow for better legibility */
+}
+.what-we-do-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.what-we-do-section .content-container {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.what-we-do-section .text-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.what-we-do-section .text-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.what-we-do-section .benefits-list li:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+    transform: translateX(5px); /* Adds a slight movement for interactivity */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.what-we-do-section .text-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555; /* Slightly darker color for better readability */
+}
+.what-we-do-section .benefits-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.what-we-do-section .benefits-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.what-we-do-section .benefits-list li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.what-we-do-section .benefits-list li .benefit-text {
+    font-weight: bold;
+}
+
 /* Navigation */
 .slider-nav {
     position: absolute;
@@ -276,8 +369,8 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 4vw; /* Adjusted font size for better fit */
-    margin-bottom: 20px; /* Consistent bottom margin */
+    font-size: 3vw; 
+    margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -289,7 +382,7 @@ nav {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .hero-content p {
-    font-size: 1rem; /* Adjusted font size for better fit */
+    font-size: 1.2vw;
     max-width: 800px;
     margin: 0 auto; /* Ensure consistent horizontal centering */
     line-height: 1.8;
@@ -312,12 +405,12 @@ nav {
     .separator {
         height: 2px;
         background-color: #007bff;
-        margin: 20px 0 10px; /* Reduced bottom margin */
+        margin: 20px 0 0px; 
     }
 
     .scroll-down-arrow {
         text-align: center;
-        margin: 0 0 10px; /* Closer to separator */
+        margin: 20px 0;
     }
 
     .scroll-down-arrow a {
@@ -354,6 +447,8 @@ nav {
         color: #333;
         margin-bottom: 30px;
         text-align: center;
+        color: var(--primary-color);
+         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
     
     .content-container {
@@ -389,7 +484,7 @@ nav {
         margin-bottom: 15px;
         color: #333;
         line-height: 1.4;
-    }
+    } 
     
     .benefits-list li::before {
         content: '✓';
@@ -399,23 +494,50 @@ nav {
         margin-right: 10px;
         flex-shrink: 0;
     }
+    .what-we-do-section .content-container {
+        display: flex;
+        gap: 20px;
+        background-color: var(--white);
+        padding: 20px; /* Optional padding for spacing */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
     
+    .what-we-do-section .text-section,
+    .what-we-do-section .benefits-section {
+        flex: 1;
+        padding: 20px;
+        box-shadow: none; 
+        background-color: transparent; 
+    }
+    
+    .what-we-do-section .content-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Optional: Add hover effect to the entire box */
+    }
     .benefit-text {
         flex: 1;
     }
-    
+    .section-title{
+        text-align: center;
+    }
+
     @media (max-width: 768px) {
         .content-container {
             flex-direction: column;
         }
-    
+        .what-we-do-section .content-container {
+            grid-template-columns: 1fr; 
+        }
         .text-section,
         .benefits-section {
             max-width: 100%;
         }
         .hero-content h1,
         .hero-content h2 {
-            font-size: 2rem;
+            font-size: 6vw;
+        }
+        .what-we-do-section {
+            padding: 40px 0;
         }
     }
     
@@ -610,6 +732,11 @@ nav {
         justify-content: center;
         flex-wrap: wrap;
         padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-container:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
     }
 
     .card {
@@ -621,7 +748,6 @@ nav {
         overflow: hidden;
         position: relative;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
     }
 
     .card img {
