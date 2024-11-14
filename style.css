@@ -326,14 +326,14 @@ nav {
 .what-we-do-section h2 {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: var(--primary-color);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adding subtle text shadow for better legibility */
 }
 .what-we-do-section .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .what-we-do-section .content-container {
@@ -345,6 +345,7 @@ nav {
 .what-we-do-section .text-section {
     flex: 1;
     padding: 20px;
+    margin-top: 40px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -355,13 +356,14 @@ nav {
 .what-we-do-section .benefits-list li:hover {
     color: var(--secondary-color);
     cursor: pointer;
-    transform: translateX(5px); /* Adds a slight movement for interactivity */
+    transform: translateX(5px); 
     transition: transform 0.3s ease, color 0.3s ease;
 }
 .what-we-do-section .text-section p {
     font-size: 1.2rem;
+    margin-bottom: 50px;
     line-height: 1.8;
-    color: #555; /* Slightly darker color for better readability */
+    color: #555; 
 }
 .what-we-do-section .benefits-section {
     flex: 1;
@@ -373,14 +375,24 @@ nav {
 .what-we-do-section .benefits-list {
     list-style: none;
     padding-left: 0;
+    margin-top: 15px;
 }
 
 .what-we-do-section .benefits-list li {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #333;
+    margin: 25px 0;  
+    line-height: 1.8; 
+    padding-left: 30px;
+    margin: 30px 0;
+    position: relative; 
 }
+.what-we-do-section .text-section li::marker{
+    color: var(--secondary-color);
+}
+.what-we-do-section .text-section li{
+    margin: 30px 0;
+    font-size: 20px;
+}
+
 
 .what-we-do-section .benefits-list li .benefit-text {
     font-weight: bold;
@@ -389,8 +401,8 @@ nav {
 /* Navigation */
 .slider-nav {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 10px; /* Position left */
+    top: 50%; 
+    left: 10px;
     transform: translateY(-50%);
     z-index: 4;
 }
@@ -453,7 +465,7 @@ nav {
     margin: 0 auto; /* Ensure consistent horizontal centering */
     line-height: 1.8;
 }
-.hero-content .btn {
+.hero-content .btn, {
     background-color: var(--secondary-color);
     color: white;
     padding: 10px 20px;
@@ -588,11 +600,24 @@ nav {
         padding: 20px; /* Optional padding for spacing */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     }
+    .content-container .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 50px;
+        transition: background-color 0.3s ease;
+    }
     
     .what-we-do-section .text-section,
     .what-we-do-section .benefits-section {
         flex: 1;
-        padding: 20px;
+        padding: 30px;
         box-shadow: none; 
         background-color: transparent; 
     }
