@@ -349,29 +349,8 @@ nav {
     background-color: #007bff;
     margin: 20px 0 0px; 
 }
-.scroll-down-arrow {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.scroll-down-arrow a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    background-color: #007bff;
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: none; /* Remove shadow from arrow */
-}
-
-.scroll-down-arrow a:hover {
-    transform: translateY(5px);
-    background-color: #007bff; /* Slightly darker on hover */
-} 
 /*Seperator Section Ends */
+
 /*Our Services Section*/
 .our-services-section {
     background: var(--secondary-gradient);
@@ -431,7 +410,7 @@ nav {
 .card h3 {
     padding: 15px;
     margin: 0;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     text-align: center;
     transition: background-color 0.3s ease;
@@ -440,7 +419,6 @@ nav {
 .card:hover h3 {
     background-color: var(--secondary-color);
 }
-
 .card-hover {
     position: absolute;
     top: 0;
@@ -457,11 +435,9 @@ nav {
     padding: 20px;
     text-align: center;
 }
-
 .card:hover .card-hover {
     opacity: 1;
 }
-
 .card-hover p {
     font-size: 1rem;
     line-height: 1.6;
@@ -469,22 +445,12 @@ nav {
     opacity: 0;
     transition: all 0.3s ease;
 }
-
 .card:hover .card-hover p {
     transform: translateY(0);
     opacity: 1;
 }
-
-@media (max-width: 992px) {
-    .card {
-        width: calc(50% - 30px);
-    }
-}
-
-@media (max-width: 600px) {
-    .card {
-        width: 100%;
-    }
+.card a, .card a:hover, .card a:focus {
+    text-decoration: none;
 }
 /*Our Services Ends */
 
@@ -508,7 +474,11 @@ nav {
         font-size: 1.1em;
     }
 }
-
+@media (max-width: 992px) {
+    .card {
+        width: calc(50% - 30px);
+    }
+}
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -604,6 +574,11 @@ nav {
     padding: 0.5rem 1rem;
 }
 }
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
 @media (max-width: 480px) {
     .hero-slider {
         min-height: 40vh;
@@ -627,5 +602,4 @@ nav {
     }
     
 }
-
 /* Responsive Styles End*/
