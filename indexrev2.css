@@ -176,6 +176,103 @@ nav {
 }
 /*Hero Slider Section Ends*/
 
+/*What we do section */
+.what-we-do-section {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    position: relative; /* For effect */
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #00a8ff; /* Light blue underline */
+    margin: 10px auto; /* Center it */
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.text-section, .benefits-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.expertise-list, .benefits-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.expertise-list li, .benefit-item {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.bullet {
+    width: 12px; 
+    height: 10px; 
+    border-radius: 50%;
+    background-color: #003d7a; /* Dark blue color */
+    margin-right: 10px; /* Space between bullet and text */
+}
+
+.checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+    position: relative;
+    background-color: #003d7a;  
+}
+
+.checkbox::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.benefit-text {
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for hover effect */
+}
+
+.benefit-item:hover .benefit-text {
+    color: #00a8ff; /* Light blue on hover */
+}
+
+/* Button styles */
+.btn {
+   display: inline-block;
+   padding: 0.8em 1.5em;
+   background-color: #0056b3; /* Primary color */
+   color: #fff;
+   text-decoration: none;
+   border-radius: 5px;
+}
+
+/*What we do section ends */
+
 /* Responsive Styles */
 @media (min-width: 1200px) {
     .hero-slider {
@@ -253,6 +350,21 @@ nav {
         font-size: 1.2em;
         padding: 0.2em;
     }
+    .what-we-do-section {
+        padding: 3rem 1rem; 
+   }
+
+   .section-title {
+        font-size: 2rem; 
+   }
+
+   .content-container {
+        flex-direction: column; 
+   }
+
+   .text-section, .benefits-section {
+        min-width: 100%; 
+   }
 }
 @media (max-width: 480px) {
     .hero-slider {
