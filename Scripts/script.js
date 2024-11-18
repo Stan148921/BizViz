@@ -184,3 +184,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const autoSlide = setInterval(() => changeSlide(currentSlide + 1), 5000);
     window.addEventListener('beforeunload', () => clearInterval(autoSlide));
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BizzViz",
+        "description": "IT support and digital solutions for small businesses",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Waverly",
+            "addressRegion": "NY"
+        },
+        "areaServed": [
+            "Waverly, NY",
+            "Elmira, NY", 
+            "Horseheads, NY",
+            "United States"
+        ],
+        "serviceArea": [
+            "On-site IT Support in Southern Tier, NY",
+            "Remote IT Services Nationwide"
+        ]
+    });
+    document.head.appendChild(script);
+});
