@@ -1,0 +1,14 @@
+# robots.txt for https://www.bizz-viz.com
+
+# Allow all search engines to crawl everything
+User-agent: *
+Disallow: 
+
+# Specify the location of the sitemap
+Sitemap: https://www.bizz-viz.com/sitemap.xml
+
+# Example of blocking a specific directory or page (optional)
+# Disallow: /private/
+
+# Block all search engines from a specific page (optional)
+# Disallow: /no-index-page.html
