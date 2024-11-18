@@ -9,22 +9,23 @@
     <meta property="og:image" content="./Assets/Images/og-image.jpg">
     <meta property="og:url" content="https://www.bizz-viz.com">
     <meta property="og:type" content="website">
+    <link rel="stylesheet" href="./style.css?v=1.2.5">
     <link rel="canonical" href="https://www.bizz-viz.com/">
     <title>BizzViz: Social Media & IT Services for Business Successs</title>
-    <link rel="stylesheet" href="./style.css?v=1.2.4">
     <link rel="apple-touch-icon" href="./Assets/Images/fav_ios.png">
     <link rel="icon" href="./Assets/Images/fav_web.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
             emailjs.init("kF-S2caDNYcjl0Mkf");
         })();
-    </script>
+    </script> 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYR4ESN93X"></script>
       <script src="./Scripts/analytics.js"></script>
 </head>
-<body>
+<body> 
     <div id="cookie-banner" style="display:none;">
         <p>This website uses cookies to ensure you get the best experience on our website. 
         <button id="accept-cookies">Accept</button>
@@ -86,7 +87,7 @@
                 <div class="text-section">
                     <p><strong>At BizzViz, we deliver tailored solutions to fuel your business's growth and success in the digital age. Our areas of expertise include:</strong></p>
                     <ul>
-                        <li><strong>IT Support:</strong>  Delivering comprehensive IT services that go beyond traditional support, including strategic advising, support desk solutions, and customized IT strategies to keep your business running smoothly and securely.</li>
+                        <li><strong>IT Services and Strategy:</strong> Providing comprehensive IT services that extend beyond traditional support, including strategic consulting, help desk solutions, and tailored IT strategies to ensure your business operates smoothly and securely.</li>
                         <li><strong>Online Reputation:</strong> Strengthening your digital footprint and managing brand perception with precision.</li>
                         <li><strong>Digital Marketing:</strong> Crafting targeted campaigns that drive growth and maximize ROI.</li>
                         <li><strong>Social Media Management:</strong> Building brand loyalty and engaging your audience on the platforms that matter most.</li>
@@ -97,8 +98,9 @@
                 </div>
                 <!-- Benefits Section -->
                 <div class="benefits-section">
+                    <!-- New Header -->
+                    <h3 class="benefits-title">Our Commitment</h3>
                     <ul class="benefits-list">
-                        
                         <li class="benefit-item">
                             <span class="benefit-text"><strong>End-to-End IT Solutions:</strong> From troubleshooting to long-term IT strategy, we've got you covered.</span>
                         </li>
@@ -120,11 +122,13 @@
         </div> 
     </section>
     <div class="separator"></div>
+    </div>
     <h2 class="our-services-heading">Our Services</h2>
+    <p class="our-services-description">At BizzViz, we are proud to present a selection of our key services designed to elevate your business. While this list is not exhaustive, it highlights some of the essential solutions we offer to meet your needs in today's competitive landscape. Explore how our expertise in IT support, social media management, and reputation management can drive your success.</p>
     <section class="card-container">
         <div class="card">
             <a href="services.html">
-            <img src="./Assets/Images/trust.jpg" alt="Reputation Management">
+            <img src="./Assets/Images/reput.jpg" alt="Reputation Management">
             <h3>Reputation Management</h3>
             <div class="card-hover">
                 <p>In today's digital world, maintaining a positive online reputation is essential for success. Our services focus on answering customer questions, responding to reviews, and promoting positive feedback. Click here to discover how we can help you build and maintain a strong online presence!</p>
@@ -169,8 +173,6 @@
     </a>
     </section>
     <div class="separator"></div>
-    <div class="scroll-down-arrow">
-        <a href="#about-us">&#9660;</a>
     </div>
     <section id="about-us" class="why-choose-us">
         <div class="container">
@@ -193,7 +195,7 @@
             </div>
         </div>
     </section>
-        <div class="separator"></div>
+    <div class="separator"></div>
     <div class="scroll-down-arrow">
         <a href="#next-section">&#9660;</a>
     </div>
@@ -205,15 +207,12 @@
                 <div class="form-group">
                     <input type="text" id="name" name="user_name" required placeholder="Your Name">
                 </div>
-            
                 <div class="form-group">
                     <input type="email" id="email" name="user_email" required placeholder="Your Email">
                 </div>
-            
                 <div class="form-group">
                     <input type="tel" id="phone" name="user_phone" placeholder="Your Phone Number (Optional)">
                 </div>
-            
                 <div class="form-group">
                     <label for="reason">Reason for Contacting</label>
                     <select id="reason" name="reason" required>
@@ -224,7 +223,6 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-            
                 <div id="services-group" class="form-group" style="display: none;">
                     <label>What services are you interested in?</label>
                     <div class="services-checkboxes">
@@ -239,20 +237,21 @@
                         <label><input type="checkbox" name="services" value="other"> Other</label>
                     </div>
                 </div>
-            
                 <div class="form-group">
                     <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
                 </div>
-            
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
-
         </div>
     </section>
     <footer>
         <p>&copy; 2024 BizzViz. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <a href="https://www.facebook.com/profile.php?id=61568279806857" class="facebook-follow-button" target="_blank">
+            <i class="fab fa-facebook-f"></i> Follow Us On Facebook
+        </a>
     </footer>
+    
 
     <script src="./Scripts/script.js" defer></script>
 </body>

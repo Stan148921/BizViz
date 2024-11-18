@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.body.appendChild(popup);
     }
-
+ 
     // Carousel/Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
