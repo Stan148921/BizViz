@@ -156,11 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showPopup(title, message, isSuccess) {
         const popup = document.createElement('div');
-        popup.className = `popup ${isSuccess ? 'success' : 'error'}`;
-        popup.innerHTML = `
+        popup.className = 'popup';
+    popup.innerHTML = `
+        <div class="popup-content ${isSuccess ? 'success' : 'error'}">
             <h2>${title}</h2>
             <p>${message}</p>
             <button onclick="this.closest('.popup').remove()">Close</button>
+        </div>
         `;
         document.body.appendChild(popup);
     }
