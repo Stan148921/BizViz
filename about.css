@@ -273,3 +273,9 @@ body {
     margin-right: 10px; /* Space between icon and text */
     font-size: 1.5rem; /* Size of the icon */
 }
+
+.material-icons {
+    font-family: 'Material Icons', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}

@@ -213,3 +213,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.head.appendChild(script);
 });
+
+const cardHeaders = document.querySelectorAll('.card-header');
+cardHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const card = header.closest('.content-card');
+        const content = card.querySelector('.card-content');
+        
+        header.classList.toggle('expanded');
+        content.classList.toggle('expanded');
+        
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
+    });
+});
+
+
