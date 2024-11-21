@@ -157,16 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function showPopup(title, message, isSuccess) {
         const popup = document.createElement('div');
         popup.className = 'popup';
-    popup.innerHTML = `
-        <div class="popup-content ${isSuccess ? 'success' : 'error'}">
-            <h2>${title}</h2>
-            <p>${message}</p>
-            <button onclick="this.closest('.popup').remove()">Close</button>
-        </div>
+        popup.innerHTML = `
+            <div class="popup-content ${isSuccess ? 'success' : 'error'}">
+                <h2>${title}</h2>
+                <p>${message}</p>
+                <button onclick="this.closest('.popup').remove()">Close</button>
+            </div>
         `;
         document.body.appendChild(popup);
     }
- 
+
     // Carousel/Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
@@ -174,20 +174,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.next');
     const prevButton = document.querySelector('.prev');
 
-    const changeSlide = (index) => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (index + totalSlides) % totalSlides;
-        slides[currentSlide].classList.add('active');
-    };
+    // Ensure slides exist before proceeding
+    if (totalSlides > 0) {
+        const changeSlide = (index) => {
+            // Safely remove 'active' class from the current slide
+            if (slides[currentSlide]) {
+                slides[currentSlide].classList.remove('active');
+            }
 
-    nextButton?.addEventListener('click', () => changeSlide(currentSlide + 1));
-    prevButton?.addEventListener('click', () => changeSlide(currentSlide - 1));
+            // Safely update the currentSlide index with wrap-around logic
+            currentSlide = (index + totalSlides) % totalSlides;
 
-    const autoSlide = setInterval(() => changeSlide(currentSlide + 1), 5000);
-    window.addEventListener('beforeunload', () => clearInterval(autoSlide));
-});
+            // Safely add 'active' class to the new current slide
+            if (slides[currentSlide]) {
+                slides[currentSlide].classList.add('active');
+            }
+        };
 
-document.addEventListener('DOMContentLoaded', function() {
+        // Add event listeners for next/prev buttons only if they exist
+        if (nextButton) {
+            nextButton.addEventListener('click', () => changeSlide(currentSlide + 1));
+        }
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => changeSlide(currentSlide - 1));
+        }
+
+        // Auto slide functionality with interval
+        const autoSlide = setInterval(() => changeSlide(currentSlide + 1), 5000);
+
+        // Clear the auto slide interval when the window is unloaded
+        window.addEventListener('beforeunload', () => clearInterval(autoSlide));
+
+    } else {
+        console.error('No slides found for the carousel.');
+    }
+
+    // JSON-LD Schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify({
@@ -212,23 +235,22 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     });
     document.head.appendChild(script);
-});
 
-const cardHeaders = document.querySelectorAll('.card-header');
-cardHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-        const card = header.closest('.content-card');
-        const content = card.querySelector('.card-content');
-        
-        header.classList.toggle('expanded');
-        content.classList.toggle('expanded');
-        
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-        } else {
-            content.style.display = 'block';
-        }
+    // Card Toggle Behavior
+    const cardHeaders = document.querySelectorAll('.card-header');
+    cardHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const card = header.closest('.content-card');
+            const content = card.querySelector('.card-content');
+            
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
     });
 });
-
-
