@@ -376,6 +376,48 @@ nav {
     text-align: center;
     font-weight: bold;
 }
+
+/*Local Business Friday's*/
+#local-business-fridays {
+    background-color: var(--white);
+    padding: 40px 20px;
+    margin: 40px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#local-business-fridays h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#local-business-fridays p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#local-business-fridays .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+#local-business-fridays .btn:hover {
+    background-color: var(--secondary-color);
+}
+/*Local Business Friday's Section ends*/
 /*What we do section ends */
 
 /* Separator Section */
