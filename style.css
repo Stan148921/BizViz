@@ -445,7 +445,15 @@ nav {
     width: 100%;
     display: block;
 }
-
+.commercial-offerings-sub-heading {
+    font-size: 2rem;  
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-top: 20px;  
+    margin-bottom: 20px;  
+    text-align: center;
+    letter-spacing: 0.5px;  
+}
 .our-services-description {
     font-size: 1rem; /* Base size */
     font-weight: bold;
@@ -540,7 +548,9 @@ nav {
     text-decoration: none;
 }
 /*Our Services Ends */
+/*Residential Service Section */
 
+/*Residential Service Section Ends*/
 /*Why Choose Us Section*/
 .why-choose-us {
     padding: 10px 0;
