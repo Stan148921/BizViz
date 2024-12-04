@@ -215,3 +215,32 @@ body {
 }
 
 
+/* Logo Section Styling */
+.logo-section {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #f4f4f4; /* Optional background for contrast */
+    border-top: 1px solid #ddd; /* Optional border to separate */
+}
+
+.logo-container {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.logo-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    max-height: 700px; 
+    width: auto;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1); 
+}
