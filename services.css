@@ -66,6 +66,29 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/*Video Styling*/
+.video-wrapper {
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Matches the card shadows */
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center; /* Centers the title and video */
+}
+
+.video-wrapper h3 {
+    font-size: 2rem; /* Consistent heading size */
+    color: var(--primary-color); /* Matches your primary color */
+    margin-bottom: 20px;
+}
+
+.video-wrapper video {
+    max-width: 100%;
+    border-radius: 10px; /* Soft corners for a modern feel */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds subtle depth */
+}
+/*Video Styling Ends*/
+
 /* Content Section Layout */
 .content-section {
     max-width: 1400px;
@@ -297,7 +320,6 @@ body {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
 }
-
 @media (max-width: 767px) {
     .content-grid {
         grid-template-columns: 1fr; /* 1 column for small screens */
@@ -324,5 +346,8 @@ body {
     .cta-button {
         font-size: 1.2rem;
         padding: 15px 40px;
+    }
+    .video-wrapper h3 {
+        font-size: 1.5rem; 
     }
 }
